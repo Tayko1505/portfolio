@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Dataviz - Music Charts</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+    <link href="../style.css" rel="stylesheet">
+</head>
+<body style="overflow-y: auto">
+
+<div class="container project-page">
+    <h1>Dataviz - Music Charts</h1>
+    <p class="subtitle">Projet scolaire de récolte et d'analyse de données.</p>
+
+    <div class="project-card">
+        <div class="project-content">
+            <p>
+                Dans le cadre de ma formation, j'ai réalisé un projet d'analyse de données, avec un thème libre.
+                Nous avons choisi d'analyser des données musicales, en récoltant des informations sur les artistes, leurs titres, et leur nombre
+                d'écoutes quotidiennes et hebdomadaires, filtrables par pays. Nous avons pour cela utilisé <a href="https://kworb.net/">Kworb</a>, qui propose
+                de multiples tableaux selon différentes plateformes.
+            </p>
+            <div class="carousel" data-current-slide="0">
+                <button class="carousel-btn prev">&#10094;</button>
+                <div class="carousel-track">
+                    <img src="../img/Capture%20d’écran%20du%202025-09-08%2014-03-10.png" alt="">
+                    <img src="../img/Capture%20d’écran%20du%202025-09-08%2014-04-01.png" alt="">
+                    <img src="../img/Capture%20d’écran%20du%202025-09-08%2014-03-36.png" alt="">
+                    <img src="../img/Capture%20d’écran%20du%202025-09-08%2014-05-21.png" alt="">
+                    <img src="../img/Capture%20d’écran%20du%202025-09-09%2013-18-56.png" alt="">
+                </div>
+                <button class="carousel-btn next">&#10095;</button>
+            </div>
+            <p>
+                Nous avons conçu nos algorithmes de récupération de données en Python avec <b>BeautifulSoup</b>, et nous avons stocké les données dans une
+                base <b>PostgreSQL</b>, que nous avons fait fonctionner avec des conteneurs <b>Docker</b>.
+                Pour les visuels, nous avons créé nos premiers tableaux de bord avec <b>Microsoft Power BI</b>, puis ajouté
+                de nouveaux dashboards avec <b>Metabase</b>.
+            </p>
+            <p>
+                De plus, sur la période d'avril à juin 2025, une machine virtuelle exécutait les mêmes scripts
+                afin de récolter un maximum de données, ce qui a permis de monter le total à environ 10 000 artistes pour 500 000 musiques.
+                La machine virtuelle est maintenant éteinte, mais les scripts peuvent toujours être utilisés en local sur ce dépôt.
+            </p>
+            <p>
+                Voici les visuels sur <b>Power BI</b> :
+            </p>
+            <div class="carousel" data-current-slide="0">
+                <button class="carousel-btn prev">&#10094;</button>
+                <div class="carousel-track">
+                    <img src="../img/1.png" alt="">
+                    <img src="../img/2.png" alt="">
+                    <img src="../img/3.png" alt="">
+                    <img src="../img/4.png" alt="">
+                    <img src="../img/5.png" alt="">
+                    <img src="../img/6.png" alt="">
+                    <img src="../img/7.png" alt="">
+                </div>
+                <button class="carousel-btn next">&#10095;</button>
+            </div>
+            <p>
+                Pour compléter nos tableaux de bord, nous avons ajouté une deuxième source de données, provenant du site
+                <a href="https://acousticbrainz.org/">AcousticBrainz</a>, qui permet d'obtenir des informations musicales sur
+                les morceaux : leur style ou leur genre, également triables par région. Nous avons aussi reproduit certains
+                dashboards réalisés sur Power BI.
+            </p>
+            <p>
+                Voici les visuels sur <b>Metabase</b> :<br>
+            </p>
+            <div class="carousel" data-current-slide="0">
+                <button class="carousel-btn prev">&#10094;</button>
+                <div class="carousel-track">
+                    <img src="../img/charts.png" alt="">
+                    <img src="../img/diversity.png" alt="">
+                    <img src="../img/genres.png" alt="">
+                    <img src="../img/genres%20per%20region.png" alt="">
+                    <img src="../img/song%20streams%20over%20time%20per%20country.png" alt="">
+                    <img src="../img/streams%20per%20region.png" alt=""  style="margin-bottom: 5px">
+                </div>
+                <small>Cliquez sur l'image pour l'afficher en plein écran.</small>
+                <button class="carousel-btn next">&#10095;</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="lightbox" id="lightbox">
+    <span class="lightbox-close" id="lightboxClose">&times;</span>
+    <img id="lightboxImg" src="" alt="Image en plein écran">
+</div>
+
+<script src="../javascript/menu.js"></script>
+<script src="../javascript/carousel.js"></script>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>PharmHappy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+    <link href="../style.css" rel="stylesheet">
+    <style>
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            padding: 2rem;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background: rgba(0,0,0,0.9);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(255,255,255,0.3);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            font-size: 3rem;
+            font-weight: bold;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body style="overflow-y: auto">
+<button class="menu-toggle" onclick="toggleMenu(event)">Menu</button>
+
+<div class="side-menu" id="sideMenu">
+    <h2>Navigation</h2>
+    <ul>
+        <li><a href="portfolio.html">Accueil</a></li>
+        <li><a href="competences.html">Compétences</a></li>
+        <li>
+            Projets
+            <ul>
+                <li><a href="smashboard.html">SmashBoard</a></li>
+                <li><a href="pharmhappy.html">PharmHappy</a></li>
+                <li><a href="dataviz.html">Music Charts</a></li>
+            </ul>
+        </li>
+        <li><a href="#">À propos</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+</div>
+
+<div class="container project-page">
+    <h1>PharmHappy</h1>
+    <p class="subtitle">Projet scolaire de développement d'application avec Symfony.</p>
+
+    <div class="project-card">
+        <div class="project-content">
+            <p>
+                Dans le cadre de ma formation, par groupe de 5, nous avons du réaliser une application complète, de la phase
+                d'analyse, jusqu'au développement complet de l'application, en y ajoutant une suite de tests unitaires.
+            </p>
+            <p>
+                La phase d'analyse nous a présenté le sujet : nous devions développer une application de gestion de stock
+                pharmaceutique pour des gestionnaires, permettant également à des clients de commander sur le site.
+                Nous devions aussi gérer le cas des pharmacies, qui avait accès à un stock de médicament plus complet.
+            </p>
+            <p>
+                En partant de l'énoncé, nous avons donc créé un diagramme de navigabilité, des cas d'usages avec
+                leur scénario nominal et alternatif, une charte graphique et des maquettes de pages avec <b>Figma</b>.
+            </p>
+            <p>
+                Une fois la phase d'analyse terminée, nous avons pu lancer le développement, avec <b>PHP</b> et le
+                framework <b>Symfony</b>. Nous avons suivi le modèle vu / contrôleur avec nos entitées, en utilisant
+                des templates Twig pour le rendu du site.
+            </p>
+            <p>
+                Voici des vidéos illustrant les trois rôles du site :
+            </p>
+            <div class="carousel" data-current-slide="0">
+                <button class="carousel-btn prev">&#10094;</button>
+                <div class="carousel-track">
+                    <img src="../img/Capture%20d’écran%20du%202025-09-08%2014-03-10.png" alt="">
+                    <img src="../img/Capture%20d’écran%20du%202025-09-08%2014-04-01.png" alt="">
+                    <img src="../img/Capture%20d’écran%20du%202025-09-08%2014-03-36.png" alt="">
+                    <img src="../img/Capture%20d’écran%20du%202025-09-08%2014-05-21.png" alt="">
+                    <img src="../img/Capture%20d’écran%20du%202025-09-09%2013-18-56.png" alt="">
+                </div>
+                <button class="carousel-btn next">&#10095;</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="lightbox" id="lightbox">
+    <span class="lightbox-close" id="lightboxClose">&times;</span>
+    <img id="lightboxImg" src="" alt="Image en plein écran">
+</div>
+
+<script src="../javascript/menu.js"></script>
+<script>
+  document.querySelectorAll(".carousel").forEach(carousel => {
+    const track = carousel.querySelector(".carousel-track");
+    const slides = carousel.querySelectorAll(".carousel-track img");
+    const prevBtn = carousel.querySelector(".prev");
+    const nextBtn = carousel.querySelector(".next");
+    let currentSlide = 0;
+
+    function updateSlide() {
+      track.style.transform = `translateX(-${currentSlide * 100}%)`;
+    }
+
+    prevBtn.addEventListener("click", () => {
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      updateSlide();
+    });
+
+    nextBtn.addEventListener("click", () => {
+      currentSlide = (currentSlide + 1) % slides.length;
+      updateSlide();
+    });
+
+    slides.forEach(slide => {
+      slide.addEventListener("click", () => {
+        const lightbox = document.getElementById("lightbox");
+        const lightboxImg = document.getElementById("lightboxImg");
+        lightbox.style.display = "flex";
+        lightboxImg.src = slide.src;
+      });
+    });
+  });
+
+  document.getElementById("lightboxClose").addEventListener("click", () => {
+    document.getElementById("lightbox").style.display = "none";
+  });
+
+  document.getElementById("lightbox").addEventListener("click", (e) => {
+    if (e.target.id === "lightbox") {
+      document.getElementById("lightbox").style.display = "none";
+    }
+  });
+</script>
+</body>
+</html>
