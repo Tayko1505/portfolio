@@ -6,6 +6,7 @@
   <title>Lacroix Lenny – Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/4aec831e53.js" crossorigin="anonymous"></script>
+  <script src="../javascript/langue.js"></script>
   <link href="../style.css" rel="stylesheet">
 </head>
 <body style="overflow-y: hidden">
@@ -25,14 +26,16 @@
           <li><a href="dataviz.html">Music Charts</a></li>
         </ul>
       </li>
-      <li><a href="#">À propos</a></li>
-      <li><a href="#">Contact</a></li>
     </ul>
+    <div style="display: flex; justify-content: space-around">
+      <img src="../img/téléchargement.png" alt="Français" title="Français" style="width: 48px; height: 30px; cursor: pointer;" onclick="setLanguage('fr')" id="flag_fr">
+      <img src="../img/en.png" alt="Anglais" title="Anglais" style="width: 48px; height: 30px; cursor: pointer;" onclick="setLanguage('en')" id="flag_en">
+    </div>
   </div>
 
   <div class="container" style="display: flex; align-items: center; height: 100%">
     <h1>Lacroix Lenny</h1>
-    <p>Futur Data Engineer, étudiant en BUT Informatique parcours DATA, toujours prêt à relever de nouveaux défis.</p>
+    <p data-key="homepage_subtitle">Futur Data Engineer, étudiant en BUT Informatique parcours DATA, toujours prêt à relever de nouveaux défis.</p>
   </div>
   <script src="../javascript/menu.js"></script>
 </body>

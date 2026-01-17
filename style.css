@@ -24,6 +24,10 @@ html, body {
     position: relative;
 }
 
+.flag-active{
+    border: solid rgb(255,255,255) 2px;
+}
+
 .container {
     display: flex;
     flex-direction: column;
