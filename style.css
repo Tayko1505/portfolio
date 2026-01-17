@@ -3,6 +3,11 @@
     --text: #f2f2f2;
     --accent: #38bdf8;
     --font-main: 'Space Grotesk', sans-serif;
+
+    /* Cartes / bordures (projets + e-cards) */
+    --card-radius: 16px;
+    --card-border-size: 2px;
+    --card-border-gradient: linear-gradient(90deg, var(--accent), #a855f7);
 }
 
 * {
@@ -40,7 +45,7 @@ html, body {
     position: relative;
     z-index: 1;
     background: rgba(47, 43, 43, 0.13);
-    border-radius: 16px;
+    border-radius: var(--card-radius);
     box-shadow: 0 8px 30px rgba(0,0,0,0.35);
     margin: 1rem auto 30px;
     overflow: hidden;
@@ -51,14 +56,23 @@ html, body {
     content: "";
     position: absolute;
     inset: 0;
-    padding: 3px;
-    border-radius: 16px;
-    background: linear-gradient(90deg, var(--accent), #a855f7);
+    padding: var(--card-border-size);
+    border-radius: var(--card-radius);
+    background: var(--card-border-gradient);
+
+    /* Fallback si mask non supporté: double background */
+    border: var(--card-border-size) solid transparent;
+    background:
+            linear-gradient(rgba(47, 43, 43, 0.13), rgba(47, 43, 43, 0.13)) padding-box,
+            var(--card-border-gradient) border-box;
+
+    /* Bordure dégradée (rectangle), intérieur découpé */
     -webkit-mask:
-            linear-gradient(#fff 0 0) content-box,
-            linear-gradient(#fff 0 0);
+            linear-gradient(0deg, #000 0%, #000 100%) content-box,
+            linear-gradient(0deg, #000 0%, #000 100%);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
+
     z-index: -1;
 }
 
@@ -183,43 +197,79 @@ a:visited {
 
 .e-card {
     animation: fadeIn 1.2s ease forwards;
-    background: linear-gradient(744deg, #af40ff, #5b42f3 50%);
     box-shadow: 0px 8px 28px -9px rgba(0,0,0,0.45);
+
+    /* Nécessaire au ::before pour clipper la bordure dégradée */
     position: relative;
+    z-index: 0;
+    overflow: hidden;
+
     width: 100%;
     max-width: 360px;
     height: 240px;
-    border-radius: 16px;
-    overflow: hidden;
+    border-radius: var(--card-radius);
+
+    /* Fond de carte (cohérent avec le style global) */
+    background: rgba(47, 43, 43, 0.13);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.e-card .infotop {
-    top: 6em;
+.e-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: var(--card-border-size);
+    border-radius: var(--card-radius);
+    background: var(--card-border-gradient);
+
+    /* Fallback si mask non supporté: double background */
+    border: var(--card-border-size) solid transparent;
+    background:
+            linear-gradient(rgba(47, 43, 43, 0.13), rgba(47, 43, 43, 0.13)) padding-box,
+            var(--card-border-gradient) border-box;
+
+    /* Bordure dégradée (rectangle), intérieur découpé */
+    -webkit-mask:
+            linear-gradient(0deg, #000 0%, #000 100%) content-box,
+            linear-gradient(0deg, #000 0%, #000 100%);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+
+    z-index: -1;
+}
+
+/* Assure que le contenu reste au-dessus de la bordure sur tous les navigateurs */
+.e-card > * {
+    position: relative;
+    z-index: 1;
+}
+
+.logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90px;
+    height: auto;
 }
 
 .icon {
     width: 3em;
-    margin-top: -1em;
-    padding-bottom: 1em;
-}
-
-.infotop {
-    text-align: center;
-    font-size: 1.1rem;
-    position: absolute;
-    top: 5.6em;
-    left: 0;
-    right: 0;
-    color: rgb(255, 255, 255);
-    font-weight: 600;
-    padding: 0 0.75rem;
 }
 
 .name {
     font-size: 0.9rem;
     font-weight: 400;
     position: relative;
-    top: 1em;
+    top: 0;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.infotop {
+    text-align: center;
 }
 
 .listCard {
@@ -232,19 +282,10 @@ a:visited {
     padding: 0 1rem;
 }
 
-.logo {
-    padding-bottom: 80px;
-    position: absolute;
-    transform: translate(-50%, -50%);
-    width: 110px;
-    height: auto;
-    left: 50%;
-}
-
 .listCard-title {
     grid-column: 1 / -1;
     text-align: center;
-    margin: 70px 0 30px;
+    margin: 0 30px;
 }
 
 .listCardFlex {
@@ -350,6 +391,27 @@ video {
     cursor: pointer;
 }
 
+/* Séparateurs de sections (page Compétences) */
+.skill-section {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin: 40px 0 10px;
+}
+
+.skill-section h2 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.skill-divider {
+    width: 100%;
+    height: 3px;
+    border-radius: 999px;
+    background: var(--card-border-gradient);
+    opacity: 0.95;
+}
+
 @media (max-width: 1024px) {
     .container {
         padding: 2rem 1.5rem;
@@ -428,8 +490,8 @@ video {
         height: 220px;
     }
 
-    .logo {
-        width: 90px;
+    :root {
+        --card-border-size: 1px;
     }
 
     .carousel {
@@ -471,7 +533,8 @@ video {
 
     .infotop {
         font-size: 1rem;
-        top: 5.2em;
+        /* "top" ne s'applique pas sans positionnement, on le retire pour éviter les écarts inattendus */
+        top: auto;
     }
 
     .name {
