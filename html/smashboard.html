@@ -3,33 +3,40 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Projet SmashBoard</title>
+    <title data-key="smashboard_document_title">Projet SmashBoard</title>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+    <script src="../javascript/langue.js"></script>
     <link href="../style.css" rel="stylesheet">
 </head>
 <body style="overflow-y: auto">
 
-<button class="menu-toggle" onclick="toggleMenu(event)">Menu</button>
+<button class="menu-toggle" onclick="toggleMenu(event)">
+    <span data-key="menu_toggle">Menu</span>
+</button>
 
 <div class="side-menu" id="sideMenu">
-    <h2>Navigation</h2>
+    <h2 data-key="nav_title">Navigation</h2>
     <ul>
-        <li><a href="accueil.html">Accueil</a></li>
-        <li><a href="competences.html">Compétences</a></li>
+        <li><a href="accueil.html" data-key="nav_home">Accueil</a></li>
+        <li><a href="competences.html" data-key="nav_skills">Compétences</a></li>
         <li>
-            Projets
+            <span data-key="nav_projects">Projets</span>
             <ul>
-                <li><a href="smashboard.html">SmashBoard</a></li>
-                <li><a href="pharmhappy.html">PharmHappy</a></li>
-                <li><a href="dataviz.html">Music Charts</a></li>
+                <li><a href="smashboard.html" data-key="nav_project_smashboard">SmashBoard</a></li>
+                <li><a href="pharmhappy.html" data-key="nav_project_pharmhappy">PharmHappy</a></li>
+                <li><a href="dataviz.html" data-key="nav_project_dataviz">Music Charts</a></li>
             </ul>
         </li>
     </ul>
+    <div style="display: flex; justify-content: space-around">
+        <img src="../img/téléchargement.png" data-key="nav_lang_fr" data-i18n-attr="alt" alt="Français" title="Français" style="width: 48px; height: 30px; cursor: pointer;" onclick="setLanguage('fr')" id="flag_fr">
+        <img src="../img/en.png" data-key="nav_lang_en" data-i18n-attr="alt" alt="Anglais" title="Anglais" style="width: 48px; height: 30px; cursor: pointer;" onclick="setLanguage('en')" id="flag_en">
+    </div>
 </div>
 
 <div class="container project-page">
-    <h1>SmashBoard</h1>
-    <p class="subtitle">Un outil interactif pour planifier et illustrer mes entraînements de badminton</p>
+    <h1 data-key="smashboard_title">SmashBoard</h1>
+    <p class="subtitle" data-key="smashboard_subtitle">Un outil interactif pour planifier et illustrer mes entraînements de badminton</p>
 
     <div class="project-card">
         <div class="project-image">
@@ -37,30 +44,32 @@
         </div>
 
         <div class="project-content">
-            <p>
+            <p data-key="smashboard_p1">
                 Ce projet m’a permis de créer un outil visuel et interactif pensé pour le badminton.
                 L’objectif est de schématiser les situations de jeu, représenter les trajectoires de volants,
                 placer les joueurs et travailler sur des stratégies d’entraînement.
             </p>
-            <p>
+            <p data-key="smashboard_p2">
                 Cet outil propose une liste simple d'outils, permettant de dessiner des lignes droites, des lignes en cloches, des flèches,
                 des traits libres, supprimer les traits à proximité, de placer des joueurs et de les déplacer.
             </p>
 
-            <p>
+            <p data-key="smashboard_p3">
                 Il a également été pensé pour une utilisation fréquente sur mobile, comme l'illustre la capture d'écran ci-dessous.
             </p>
 
             <div class="project-image">
-                <img src="../img/smashboard_mobile.png" alt="SmashBoard sur mobile" />
+                <img src="../img/smashboard_mobile.png" data-key="smashboard_img_mobile_alt" data-i18n-attr="alt" alt="SmashBoard sur mobile" />
             </div>
 
             <p>
-                Vous pouvez retrouver le code source de ce projet sur mon Github, en cliquant sur <a href="https://github.com/Tayko1505/smashboard">ce lien</a>.
+                <span data-key="smashboard_p4_before_link">Vous pouvez retrouver le code source de ce projet sur mon Github, en cliquant sur </span>
+                <a href="https://github.com/Tayko1505/smashboard" data-key="smashboard_link_text">ce lien</a>.
             </p>
             <p>
-                Ce projet a été déployé via CloudFlare / Wrangler, et est fréquemment utilisé par mon entraîneur.
-                Il est retrouvable en cliquant sur <a href="https://main.smashboard-6vk.pages.dev/">ce lien</a>.
+                <span data-key="smashboard_p5_before_link">Ce projet a été déployé via CloudFlare / Wrangler, et est fréquemment utilisé par mon entraîneur.
+                Il est retrouvable en cliquant sur </span>
+                <a href="https://main.smashboard-6vk.pages.dev/" data-key="smashboard_link_text">ce lien</a>.
             </p>
         </div>
     </div>

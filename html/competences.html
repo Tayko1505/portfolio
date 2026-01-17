@@ -3,16 +3,42 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Compétences</title>
+    <title data-key="skills_document_title">Compétences</title>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+    <script src="../javascript/langue.js"></script>
     <link href="../style.css" rel="stylesheet">
 </head>
 <body>
+
+<button class="menu-toggle" onclick="toggleMenu(event)">
+    <span data-key="menu_toggle">Menu</span>
+</button>
+
+<div class="side-menu" id="sideMenu">
+    <h2 data-key="nav_title">Navigation</h2>
+    <ul>
+        <li><a href="accueil.html" data-key="nav_home">Accueil</a></li>
+        <li><a href="competences.html" data-key="nav_skills">Compétences</a></li>
+        <li>
+            <span data-key="nav_projects">Projets</span>
+            <ul>
+                <li><a href="smashboard.html" data-key="nav_project_smashboard">SmashBoard</a></li>
+                <li><a href="pharmhappy.html" data-key="nav_project_pharmhappy">PharmHappy</a></li>
+                <li><a href="dataviz.html" data-key="nav_project_dataviz">Music Charts</a></li>
+            </ul>
+        </li>
+    </ul>
+    <div style="display: flex; justify-content: space-around">
+        <img src="../img/téléchargement.png" data-key="nav_lang_fr" data-i18n-attr="alt" alt="Français" title="Français" style="width: 48px; height: 30px; cursor: pointer;" onclick="setLanguage('fr')" id="flag_fr">
+        <img src="../img/en.png" data-key="nav_lang_en" data-i18n-attr="alt" alt="Anglais" title="Anglais" style="width: 48px; height: 30px; cursor: pointer;" onclick="setLanguage('en')" id="flag_en">
+    </div>
+</div>
+
 <div class="listCardFlex">
     <div class="listCard">
-        <h1 class="listCard-title">Compétences</h1>
+        <h1 class="listCard-title" data-key="skills_title">Compétences</h1>
         <div class="skill-section">
-            <h2>Data & Business Intelligence</h2>
+            <h2 data-key="skills_section_data_bi">Data & Business Intelligence</h2>
             <div class="skill-divider"></div>
         </div>
 
@@ -20,7 +46,7 @@
             <div class="infotop">
                 <img src="../img/Icon/icons8-pandas-96.png" alt="Pandas" class="logo">
                 <br>Pandas<br>
-                <div class="name">Nettoyage, transformation, analyse de <br>données, dataframes.</div>
+                <div class="name" data-key="skill_pandas_desc">Nettoyage, transformation, analyse de <br>données, dataframes.</div>
             </div>
         </div>
 
@@ -28,7 +54,7 @@
             <div class="infotop">
                 <img src="../img/Icon/icons8-power-bi-96.png" alt="Power BI" class="logo">
                 <br>Power BI<br>
-                <div class="name">Dataviz, rapports, KPI, transformation <br> et modèles.</div>
+                <div class="name" data-key="skill_powerbi_desc">Dataviz, rapports, KPI, transformation <br> et modèles.</div>
             </div>
         </div>
 
@@ -36,12 +62,12 @@
             <div class="infotop">
                 <img src="../img/Icon/icons8-grafana-96.png" alt="Grafana" class="logo">
                 <br>Grafana<br>
-                <div class="name">Dashboards, métriques, panels, <br> visualisations.</div>
+                <div class="name" data-key="skill_grafana_desc">Dashboards, métriques, panels, <br> visualisations.</div>
             </div>
         </div>
 
         <div class="skill-section">
-            <h2>Base de données & IA</h2>
+            <h2 data-key="skills_section_db_ai">Base de données & IA</h2>
             <div class="skill-divider"></div>
         </div>
 
@@ -49,7 +75,7 @@
             <div class="infotop">
                 <img src="../img/Icon/icons8-base-de-données-100.png" alt="SQL" class="logo">
                 <br>SQL<br>
-                <div class="name">Modélisation, requêtes, jointures, <br>agrégations, optimisation.</div>
+                <div class="name" data-key="skill_sql_desc">Modélisation, requêtes, jointures, <br>agrégations, optimisation.</div>
             </div>
         </div>
 
@@ -57,7 +83,7 @@
             <div class="infotop">
                 <img src="../img/Icon/icons8-mysql-100.png" alt="MySQL" class="logo">
                 <br>MySQL<br>
-                <div class="name">Schémas, index, requêtes, et <br> administration de base.</div>
+                <div class="name" data-key="skill_mysql_desc">Schémas, index, requêtes, et <br> administration de base.</div>
             </div>
         </div>
 
@@ -65,7 +91,7 @@
             <div class="infotop">
                 <img src="../img/Icon/icons8-postgres-100.png" alt="PostgreSQL" class="logo">
                 <br>PostgreSQL<br>
-                <div class="name">SQL avancé, contraintes, performances, <br> Common Table Expression.</div>
+                <div class="name" data-key="skill_postgres_desc">SQL avancé, contraintes, performances, <br> Common Table Expression.</div>
             </div>
         </div>
 
@@ -73,7 +99,7 @@
             <div class="infotop">
                 <img src="../img/Icon/icons8-mongodb-96.png" alt="MongoDB" class="logo">
                 <br>MongoDB<br>
-                <div class="name">Documents, agrégations, <br> modélisation NoSQL.</div>
+                <div class="name" data-key="skill_mongodb_desc">Documents, agrégations, <br> modélisation NoSQL.</div>
             </div>
         </div>
 
@@ -81,12 +107,12 @@
             <div class="infotop">
                 <img src="../img/Icon/icons8-intelligence-artificielle-100.png" alt="IA" class="logo">
                 <br>Intelligence Artificielle<br>
-                <div class="name">Bases du Machine Learning, <br>compréhension des modèles.</div>
+                <div class="name" data-key="skill_ai_desc">Bases du Machine Learning, <br>compréhension des modèles.</div>
             </div>
         </div>
 
         <div class="skill-section">
-            <h2>Front-end</h2>
+            <h2 data-key="skills_section_front">Front-end</h2>
             <div class="skill-divider"></div>
         </div>
 
@@ -94,7 +120,7 @@
             <div class="infotop">
                 <img src="../img/Icon/icons8-html-5-96.png" alt="HTML" class="logo">
                 <br>HTML<br>
-                <div class="name">Structure sémantique, accessibilité de base <br>et structure du DOM.</div>
+                <div class="name" data-key="skill_html_desc">Structure sémantique, accessibilité de base <br>et structure du DOM.</div>
             </div>
         </div>
 
@@ -102,7 +128,7 @@
             <div class="infotop">
                 <img src="../img/Icon/icons8-css-96.png" alt="CSS" class="logo">
                 <br>CSS<br>
-                <div class="name">Mise en page responsive, flex/grid,<br> animations, composants UI.</div>
+                <div class="name" data-key="skill_css_desc">Mise en page responsive, flex/grid,<br> animations, composants UI.</div>
             </div>
         </div>
 
@@ -110,7 +136,7 @@
             <div class="infotop">
                 <img src="../img/Icon/icons8-vent-arrièrecss-96.png" alt="Tailwind CSS" class="logo">
                 <br>Tailwind CSS<br>
-                <div class="name">Design system utilitaire, prototypage <br>rapide, responsive.</div>
+                <div class="name" data-key="skill_tailwind_desc">Design system utilitaire, prototypage <br>rapide, responsive.</div>
             </div>
         </div>
 
@@ -118,15 +144,15 @@
             <div class="infotop">
                 <img src="../img/Icon/icons8-javascript-96.png" alt="JavaScript" class="logo">
                 <br>JavaScript<br>
-                <div class="name">Pages dynamiques, DOM, événements, <br>logique côté client et SRR.</div>
+                <div class="name" data-key="skill_js_desc">Pages dynamiques, DOM, événements, <br>logique côté client et SRR.</div>
             </div>
         </div>
 
         <div class="e-card playing">
             <div class="infotop">
-                <img src="../img/Icon/icons8-manuscrit-96.png" alt="Ts" class="logo">
+                <img src="../img/Icon/icons8-manuscrit-96.png" alt="TypeScript" class="logo">
                 <br>Typescript<br>
-                <div class="name">Typage strict, classe, interface, <br> gestion des cookies et des storages.</div>
+                <div class="name" data-key="skill_ts_desc">Typage strict, classe, interface, <br> gestion des cookies et des storages.</div>
             </div>
         </div>
 
@@ -134,12 +160,12 @@
             <div class="infotop">
                 <img src="../img/Icon/icons8-brillant-96.png" alt="Svelte" class="logo">
                 <br>Svelte<br>
-                <div class="name">Composants, gestion des états <br>et de la réactivé.</div>
+                <div class="name" data-key="skill_svelte_desc">Composants, gestion des états <br>et de la réactivité.</div>
             </div>
         </div>
 
         <div class="skill-section">
-            <h2>Back-end</h2>
+            <h2 data-key="skills_section_back">Back-end</h2>
             <div class="skill-divider"></div>
         </div>
 
@@ -147,7 +173,7 @@
             <div class="infotop">
                 <img src="../img/Icon/icons8-php-96.png" alt="PHP" class="logo">
                 <br>PHP<br>
-                <div class="name">Back-end web, formulaires, sessions, <br>CRUD, intégrations et tests.</div>
+                <div class="name" data-key="skill_php_desc">Back-end web, formulaires, sessions, <br>CRUD, intégrations et tests.</div>
             </div>
         </div>
 
@@ -155,7 +181,7 @@
             <div class="infotop">
                 <img src="../img/Icon/icons8-symfony-96.png" alt="Symfony" class="logo">
                 <br>Symfony<br>
-                <div class="name">Architecture MVC, routes, contrôleurs, <br>Doctrine, API Platform.</div>
+                <div class="name" data-key="skill_symfony_desc">Architecture MVC, routes, contrôleurs, <br>Doctrine, API Platform.</div>
             </div>
         </div>
 
@@ -163,7 +189,7 @@
             <div class="infotop">
                 <img src="../img/Icon/icons8-python-48.png" alt="Python" class="logo">
                 <br>Python<br>
-                <div class="name">Automatisation, scripts, data (Pandas), <br>APIs et algorithmes complexes.</div>
+                <div class="name" data-key="skill_python_desc">Automatisation, scripts, data (Pandas), <br>APIs et algorithmes complexes.</div>
             </div>
         </div>
 
@@ -171,7 +197,7 @@
             <div class="infotop">
                 <img src="../img/Icon/icons8-django-96.png" alt="Django" class="logo">
                 <br>Django<br>
-                <div class="name">Back-end Python, ORM, auth, <br>endpoints, bonnes pratiques.</div>
+                <div class="name" data-key="skill_django_desc">Back-end Python, ORM, auth, <br>endpoints, bonnes pratiques.</div>
             </div>
         </div>
 
@@ -179,7 +205,7 @@
             <div class="infotop">
                 <img src="../img/Icon/fast api.png" alt="FastAPI" class="logo">
                 <br>FastAPI<br>
-                <div class="name">APIs rapides, validation Pydantic, <br>docs Swagger/OpenAPI.</div>
+                <div class="name" data-key="skill_fastapi_desc">APIs rapides, validation Pydantic, <br>docs Swagger/OpenAPI.</div>
             </div>
         </div>
 
@@ -187,12 +213,12 @@
             <div class="infotop">
                 <img src="../img/Icon/icons8-rouiller-96.png" alt="Rust" class="logo">
                 <br>Rust<br>
-                <div class="name">Découverte du langage, performance, <br>sécurité mémoire et API Axum.</div>
+                <div class="name" data-key="skill_rust_desc">Découverte du langage, performance, <br>sécurité mémoire et API Axum.</div>
             </div>
         </div>
 
         <div class="skill-section">
-            <h2>DevOps & Systèmes</h2>
+            <h2 data-key="skills_section_devops">DevOps & Systèmes</h2>
             <div class="skill-divider"></div>
         </div>
 
@@ -200,7 +226,7 @@
             <div class="infotop">
                 <img src="../img/Icon/icons8-docker-96.png" alt="Docker" class="logo">
                 <br>Docker<br>
-                <div class="name">Conteneurisation, images, compose, <br>environnements reproductibles.</div>
+                <div class="name" data-key="skill_docker_desc">Conteneurisation, images, compose, <br>environnements reproductibles.</div>
             </div>
         </div>
 
@@ -208,7 +234,7 @@
             <div class="infotop">
                 <img src="../img/Icon/icons8-linux-96.png" alt="Linux" class="logo">
                 <br>Linux<br>
-                <div class="name">Terminal, permissions, tooling,<br> workflows de dev.</div>
+                <div class="name" data-key="skill_linux_desc">Terminal, permissions, tooling,<br> workflows de dev.</div>
             </div>
         </div>
 
@@ -216,7 +242,7 @@
             <div class="infotop">
                 <img src="../img/Icon/cisco-packet-tracer.png" alt="Cisco Packet Tracer" class="logo">
                 <br>Cisco Packet Tracer<br>
-                <div class="name">Simulation réseau, topologies, <br>routage/switching de base.</div>
+                <div class="name" data-key="skill_cisco_desc">Simulation réseau, topologies, <br>routage/switching de base.</div>
             </div>
         </div>
 
@@ -224,7 +250,7 @@
             <div class="infotop">
                 <img src="../img/Icon/icons8-git-96.png" alt="Git" class="logo">
                 <br>Git<br>
-                <div class="name">Branches, PR, merge/rebase, <br> versionnage en équipe.</div>
+                <div class="name" data-key="skill_git_desc">Branches, PR, merge/rebase, <br> versionnage en équipe.</div>
             </div>
         </div>
     </div>

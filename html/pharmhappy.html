@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>PharmHappy</title>
+    <title data-key="pharmhappy_document_title">PharmHappy</title>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+    <script src="../javascript/langue.js"></script>
     <link href="../style.css" rel="stylesheet">
     <style>
         .lightbox {
@@ -41,57 +42,61 @@
     </style>
 </head>
 <body style="overflow-y: auto">
-<button class="menu-toggle" onclick="toggleMenu(event)">Menu</button>
+<button class="menu-toggle" onclick="toggleMenu(event)">
+    <span data-key="menu_toggle">Menu</span>
+</button>
 
 <div class="side-menu" id="sideMenu">
-    <h2>Navigation</h2>
+    <h2 data-key="nav_title">Navigation</h2>
     <ul>
-        <li><a href="accueil.html">Accueil</a></li>
-        <li><a href="competences.html">Compétences</a></li>
+        <li><a href="accueil.html" data-key="nav_home">Accueil</a></li>
+        <li><a href="competences.html" data-key="nav_skills">Compétences</a></li>
         <li>
-            Projets
+            <span data-key="nav_projects">Projets</span>
             <ul>
-                <li><a href="smashboard.html">SmashBoard</a></li>
-                <li><a href="pharmhappy.html">PharmHappy</a></li>
-                <li><a href="dataviz.html">Music Charts</a></li>
+                <li><a href="smashboard.html" data-key="nav_project_smashboard">SmashBoard</a></li>
+                <li><a href="pharmhappy.html" data-key="nav_project_pharmhappy">PharmHappy</a></li>
+                <li><a href="dataviz.html" data-key="nav_project_dataviz">Music Charts</a></li>
             </ul>
         </li>
-        <li><a href="#">À propos</a></li>
-        <li><a href="#">Contact</a></li>
     </ul>
+    <div style="display: flex; justify-content: space-around">
+        <img src="../img/téléchargement.png" data-key="nav_lang_fr" data-i18n-attr="alt" alt="Français" title="Français" style="width: 48px; height: 30px; cursor: pointer;" onclick="setLanguage('fr')" id="flag_fr">
+        <img src="../img/en.png" data-key="nav_lang_en" data-i18n-attr="alt" alt="Anglais" title="Anglais" style="width: 48px; height: 30px; cursor: pointer;" onclick="setLanguage('en')" id="flag_en">
+    </div>
 </div>
 
 <div class="container project-page">
-    <h1>PharmHappy</h1>
-    <p class="subtitle">Projet scolaire de développement d'application avec Symfony.</p>
+    <h1 data-key="pharmhappy_title">PharmHappy</h1>
+    <p class="subtitle" data-key="pharmhappy_subtitle">Projet scolaire de développement d'application avec Symfony.</p>
 
     <div class="project-card">
         <div class="project-content">
-            <p>
+            <p data-key="pharmhappy_p1">
                 Dans le cadre de ma formation, par groupe de 5, nous avons du réaliser une application complète, de la phase
                 d'analyse, jusqu'au développement complet de l'application, en y ajoutant une suite de tests unitaires.
                 Également, le site a été déployé entièrement sur une machine virtuelle, accessible dans le réseau de l'IUT.
             </p>
-            <p>
+            <p data-key="pharmhappy_p2">
                 La phase d'analyse nous a présenté le sujet : nous devions développer une application de gestion de stock
                 pharmaceutique pour des gestionnaires, permettant également à des clients de commander sur le site.
                 Nous devions aussi gérer le cas des pharmacies, qui avait accès à un stock de médicament plus complet.
                 Les gestionnaires devaient pouvoir gérer les stocks et la date de péremption des échantillons.
             </p>
-            <p>
+            <p data-key="pharmhappy_p3">
                 En partant de l'énoncé, nous avons donc créé un diagramme de navigabilité, des cas d'usages avec
                 leur scénario nominal et alternatif, une charte graphique et des maquettes de pages avec <b>Figma</b>.
             </p>
-            <p>
+            <p data-key="pharmhappy_p4">
                 Une fois la phase d'analyse terminée, nous avons pu lancer le développement, avec <b>PHP</b> et le
-                framework <b>Symfony</b>. Nous avons suivi le modèle vu / contrôleur avec nos entitées, en utilisant
+                framework <b>Symfony</b>. Nous avons suivi le modèle vu / contrôleur avec nos entités, en utilisant
                 des templates Twig pour le rendu du site.
             </p>
-            <p>
+            <p data-key="pharmhappy_p5">
                 Enfin, le site dispose d'un chatbot, développé avec l'API
                 d'OpenAI, réglé pour répondre aux questions des utilisateurs concernant les médicaments.
             </p>
-            <p>
+            <p data-key="pharmhappy_gallery_intro">
                 Voici des images illustrant le rendu final du site :
             </p>
             <div class="carousel" data-current-slide="0">
@@ -106,16 +111,23 @@
                     <img src="../img/user.png" alt="PharmHappy Client Role" />
                     <img src="../img/chatbot.png" alt="PharmHappy Client Role" />
                 </div>
-                <small>Cliquez sur l'image pour l'afficher en plein écran.</small>
+                <small data-key="lightbox_hint">Cliquez sur l'image pour l'afficher en plein écran.</small>
                 <button class="carousel-btn next">&#10095;</button>
             </div>
-            <p>Voici un <a href="https://github.com/Tayko1505/pharmhappy">lien</a> vers le dépôt GitHub du site.</p>
+            <p>
+                <span data-key="pharmhappy_repo_text">Voici un </span>
+                <a href="https://github.com/Tayko1505/pharmhappy" data-key="pharmhappy_repo_link_text">lien</a>
+                <span data-key="pharmhappy_repo_after"> vers le dépôt GitHub du site.</span>
+            </p>
         </div>
     </div>
 </div>
 <div class="lightbox" id="lightbox">
     <span class="lightbox-close" id="lightboxClose">&times;</span>
-    <img id="lightboxImg" src="" alt="Image en plein écran">
+    <img id="lightboxImg" src="" data-key="lightbox_fullscreen_alt" data-i18n-attr="alt" alt="Image en plein écran">
 </div>
 <script src="../javascript/menu.js"></script>
 <script src="../javascript/carousel.js"></script>
+
+</body>
+</html>

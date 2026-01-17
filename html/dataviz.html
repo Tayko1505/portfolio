@@ -3,19 +3,44 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Dataviz - Music Charts</title>
+    <title data-key="dataviz_document_title">Dataviz - Music Charts</title>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+    <script src="../javascript/langue.js"></script>
     <link href="../style.css" rel="stylesheet">
 </head>
 <body style="overflow-y: auto">
 
+<button class="menu-toggle" onclick="toggleMenu(event)">
+    <span data-key="menu_toggle">Menu</span>
+</button>
+
+<div class="side-menu" id="sideMenu">
+    <h2 data-key="nav_title">Navigation</h2>
+    <ul>
+        <li><a href="accueil.html" data-key="nav_home">Accueil</a></li>
+        <li><a href="competences.html" data-key="nav_skills">Compétences</a></li>
+        <li>
+            <span data-key="nav_projects">Projets</span>
+            <ul>
+                <li><a href="smashboard.html" data-key="nav_project_smashboard">SmashBoard</a></li>
+                <li><a href="pharmhappy.html" data-key="nav_project_pharmhappy">PharmHappy</a></li>
+                <li><a href="dataviz.html" data-key="nav_project_dataviz">Music Charts</a></li>
+            </ul>
+        </li>
+    </ul>
+    <div style="display: flex; justify-content: space-around">
+        <img src="../img/téléchargement.png" data-key="nav_lang_fr" data-i18n-attr="alt" alt="Français" title="Français" style="width: 48px; height: 30px; cursor: pointer;" onclick="setLanguage('fr')" id="flag_fr">
+        <img src="../img/en.png" data-key="nav_lang_en" data-i18n-attr="alt" alt="Anglais" title="Anglais" style="width: 48px; height: 30px; cursor: pointer;" onclick="setLanguage('en')" id="flag_en">
+    </div>
+</div>
+
 <div class="container project-page">
-    <h1>Dataviz - Music Charts</h1>
-    <p class="subtitle">Projet scolaire de récolte et d'analyse de données.</p>
+    <h1 data-key="dataviz_title">Dataviz - Music Charts</h1>
+    <p class="subtitle" data-key="dataviz_subtitle">Projet scolaire de récolte et d'analyse de données.</p>
 
     <div class="project-card">
         <div class="project-content">
-            <p>
+            <p data-key="dataviz_p1">
                 Dans le cadre de ma formation, j'ai réalisé un projet d'analyse de données, avec un thème libre.
                 Nous avons choisi d'analyser des données musicales, en récoltant des informations sur les artistes, leurs titres, et leur nombre
                 d'écoutes quotidiennes et hebdomadaires, filtrables par pays. Nous avons pour cela utilisé <a href="https://kworb.net/">Kworb</a>, qui propose
@@ -32,18 +57,18 @@
                 </div>
                 <button class="carousel-btn next">&#10095;</button>
             </div>
-            <p>
+            <p data-key="dataviz_p2">
                 Nous avons conçu nos algorithmes de récupération de données en Python avec <b>BeautifulSoup</b>, et nous avons stocké les données dans une
                 base <b>PostgreSQL</b>, que nous avons fait fonctionner avec des conteneurs <b>Docker</b>.
                 Pour les visuels, nous avons créé nos premiers tableaux de bord avec <b>Microsoft Power BI</b>, puis ajouté
                 de nouveaux dashboards avec <b>Metabase</b>.
             </p>
-            <p>
+            <p data-key="dataviz_p3">
                 De plus, sur la période d'avril à juin 2025, une machine virtuelle exécutait les mêmes scripts
                 afin de récolter un maximum de données, ce qui a permis de monter le total à environ 10 000 artistes pour 500 000 musiques.
                 La machine virtuelle est maintenant éteinte, mais les scripts peuvent toujours être utilisés en local sur ce dépôt.
             </p>
-            <p>
+            <p data-key="dataviz_powerbi_intro">
                 Voici les visuels sur <b>Power BI</b> :
             </p>
             <div class="carousel" data-current-slide="0">
@@ -59,13 +84,13 @@
                 </div>
                 <button class="carousel-btn next">&#10095;</button>
             </div>
-            <p>
+            <p data-key="dataviz_p4">
                 Pour compléter nos tableaux de bord, nous avons ajouté une deuxième source de données, provenant du site
                 <a href="https://acousticbrainz.org/">AcousticBrainz</a>, qui permet d'obtenir des informations musicales sur
                 les morceaux : leur style ou leur genre, également triables par région. Nous avons aussi reproduit certains
                 dashboards réalisés sur Power BI.
             </p>
-            <p>
+            <p data-key="dataviz_metabase_intro">
                 Voici les visuels sur <b>Metabase</b> :<br>
             </p>
             <div class="carousel" data-current-slide="0">
@@ -78,16 +103,19 @@
                     <img src="../img/song%20streams%20over%20time%20per%20country.png" alt="">
                     <img src="../img/streams%20per%20region.png" alt=""  style="margin-bottom: 5px">
                 </div>
-                <small>Cliquez sur l'image pour l'afficher en plein écran.</small>
+                <small data-key="lightbox_hint">Cliquez sur l'image pour l'afficher en plein écran.</small>
                 <button class="carousel-btn next">&#10095;</button>
-                <p>Vous pouvez retrouver le dépôt Github sur ce <a href="https://github.com/Tayko1505/music-charts/">lien</a></p>
+                <p>
+                    <span data-key="dataviz_repo_text">Vous pouvez retrouver le dépôt Github sur ce </span>
+                    <a href="https://github.com/Tayko1505/music-charts/" data-key="dataviz_repo_link_text">lien</a>
+                </p>
             </div>
         </div>
     </div>
 </div>
 <div class="lightbox" id="lightbox">
     <span class="lightbox-close" id="lightboxClose">&times;</span>
-    <img id="lightboxImg" src="" alt="Image en plein écran">
+    <img id="lightboxImg" src="" data-key="lightbox_fullscreen_alt" data-i18n-attr="alt" alt="Image en plein écran">
 </div>
 
 <script src="../javascript/menu.js"></script>

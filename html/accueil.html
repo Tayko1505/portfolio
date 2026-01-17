@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lacroix Lenny – Portfolio</title>
+  <title data-key="homepage_document_title">Lacroix Lenny – Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/4aec831e53.js" crossorigin="anonymous"></script>
   <script src="../javascript/langue.js"></script>
@@ -14,27 +14,27 @@
     <i class="fa-solid fa-bars"></i>
   </button>
   <div class="side-menu" id="sideMenu">
-    <h2>Navigation</h2>
+    <h2 data-key="nav_title">Navigation</h2>
     <ul>
-      <li><a href="accueil.html">Accueil</a></li>
-      <li><a href="competences.html">Compétences</a></li>
+      <li><a href="accueil.html" data-key="nav_home">Accueil</a></li>
+      <li><a href="competences.html" data-key="nav_skills">Compétences</a></li>
       <li>
-        Projets
+        <span data-key="nav_projects">Projets</span>
         <ul>
-          <li><a href="smashboard.html">SmashBoard</a></li>
-          <li><a href="pharmhappy.html">PharmHappy</a></li>
-          <li><a href="dataviz.html">Music Charts</a></li>
+          <li><a href="smashboard.html" data-key="nav_project_smashboard">SmashBoard</a></li>
+          <li><a href="pharmhappy.html" data-key="nav_project_pharmhappy">PharmHappy</a></li>
+          <li><a href="dataviz.html" data-key="nav_project_dataviz">Music Charts</a></li>
         </ul>
       </li>
     </ul>
     <div style="display: flex; justify-content: space-around">
-      <img src="../img/téléchargement.png" alt="Français" title="Français" style="width: 48px; height: 30px; cursor: pointer;" onclick="setLanguage('fr')" id="flag_fr">
-      <img src="../img/en.png" alt="Anglais" title="Anglais" style="width: 48px; height: 30px; cursor: pointer;" onclick="setLanguage('en')" id="flag_en">
+      <img src="../img/téléchargement.png" data-key="nav_lang_fr" data-i18n-attr="alt" alt="Français" title="Français" style="width: 48px; height: 30px; cursor: pointer;" onclick="setLanguage('fr')" id="flag_fr">
+      <img src="../img/en.png" data-key="nav_lang_en" data-i18n-attr="alt" alt="Anglais" title="Anglais" style="width: 48px; height: 30px; cursor: pointer;" onclick="setLanguage('en')" id="flag_en">
     </div>
   </div>
 
   <div class="container" style="display: flex; align-items: center; height: 100%">
-    <h1>Lacroix Lenny</h1>
+    <h1 data-key="homepage_title">Lacroix Lenny</h1>
     <p data-key="homepage_subtitle">Futur Data Engineer, étudiant en BUT Informatique parcours DATA, toujours prêt à relever de nouveaux défis.</p>
   </div>
   <script src="../javascript/menu.js"></script>
