@@ -1,6 +1,5 @@
 const translations = {
     fr: {
-        // Global / navigation
         nav_title: "Navigation",
         nav_home: "Accueil",
         nav_skills: "Compétences",
@@ -12,12 +11,10 @@ const translations = {
         nav_lang_en: "Anglais",
         menu_toggle: "Menu",
 
-        // Home
         homepage_title: "Lacroix Lenny",
         homepage_subtitle: "Futur Data Engineer, étudiant en BUT Informatique parcours DATA, toujours prêt à relever de nouveaux défis.",
-        homepage_document_title: "Lacroix Lenny – Portfolio",
+        homepage_document_title: "Accueil",
 
-        // Skills
         skills_document_title: "Compétences",
         skills_title: "Compétences",
         skills_section_data_bi: "Data & Business Intelligence",
@@ -26,7 +23,6 @@ const translations = {
         skills_section_back: "Back-end",
         skills_section_devops: "DevOps & Systèmes",
 
-        // Skill cards
         skill_pandas_desc: "Nettoyage, transformation, analyse de <br>données, dataframes.",
         skill_powerbi_desc: "Dataviz, rapports, KPI, transformation <br> et modèles.",
         skill_grafana_desc: "Dashboards, métriques, panels, <br> visualisations.",
@@ -52,7 +48,6 @@ const translations = {
         skill_cisco_desc: "Simulation réseau, topologies, <br>routage/switching de base.",
         skill_git_desc: "Branches, PR, merge/rebase, <br> versionnage en équipe.",
 
-        // SmashBoard
         smashboard_document_title: "Projet SmashBoard",
         smashboard_title: "SmashBoard",
         smashboard_subtitle: "Un outil interactif pour planifier et illustrer mes entraînements de badminton",
@@ -64,7 +59,6 @@ const translations = {
         smashboard_link_text: "ce lien",
         smashboard_p5_before_link: "Ce projet a été déployé via CloudFlare / Wrangler, et est fréquemment utilisé par mon entraîneur. Il est retrouvable en cliquant sur ",
 
-        // PharmHappy
         pharmhappy_document_title: "PharmHappy",
         pharmhappy_title: "PharmHappy",
         pharmhappy_subtitle: "Projet scolaire de développement d'application avec Symfony.",
@@ -80,7 +74,6 @@ const translations = {
         pharmhappy_repo_after: " vers le dépôt GitHub du site.",
         lightbox_fullscreen_alt: "Image en plein écran",
 
-        // Dataviz
         dataviz_document_title: "Dataviz - Music Charts",
         dataviz_title: "Dataviz - Music Charts",
         dataviz_subtitle: "Projet scolaire de récolte et d'analyse de données.",
@@ -94,7 +87,6 @@ const translations = {
         dataviz_repo_link_text: "lien"
     },
     en: {
-        // Global / navigation
         nav_title: "Navigation",
         nav_home: "Home",
         nav_skills: "Skills",
@@ -106,12 +98,10 @@ const translations = {
         nav_lang_en: "English",
         menu_toggle: "Menu",
 
-        // Home
         homepage_title: "Lacroix Lenny",
         homepage_subtitle: "Future Data Engineer, student in BUT Computer Science DATA track, always ready to take on new challenges.",
-        homepage_document_title: "Lacroix Lenny – Portfolio",
+        homepage_document_title: "Homepage",
 
-        // Skills
         skills_document_title: "Skills",
         skills_title: "Skills",
         skills_section_data_bi: "Data & Business Intelligence",
@@ -120,7 +110,6 @@ const translations = {
         skills_section_back: "Back-end",
         skills_section_devops: "DevOps & Systems",
 
-        // Skill cards
         skill_pandas_desc: "Cleaning, transforming, and analyzing <br>data, dataframes.",
         skill_powerbi_desc: "Dataviz, reports, KPIs, transformations <br> and models.",
         skill_grafana_desc: "Dashboards, metrics, panels, <br> visualizations.",
@@ -146,7 +135,6 @@ const translations = {
         skill_cisco_desc: "Network simulation, topologies, <br>basic routing/switching.",
         skill_git_desc: "Branches, PRs, merge/rebase, <br>team versioning.",
 
-        // SmashBoard
         smashboard_document_title: "SmashBoard Project",
         smashboard_title: "SmashBoard",
         smashboard_subtitle: "An interactive tool to plan and illustrate my badminton training sessions",
@@ -158,7 +146,6 @@ const translations = {
         smashboard_link_text: "this link",
         smashboard_p5_before_link: "This project was deployed using Cloudflare / Wrangler and is frequently used by my coach. You can access it by clicking ",
 
-        // PharmHappy
         pharmhappy_document_title: "PharmHappy",
         pharmhappy_title: "PharmHappy",
         pharmhappy_subtitle: "School project: building an application with Symfony.",
@@ -174,7 +161,6 @@ const translations = {
         pharmhappy_repo_after: " to the site's GitHub repository.",
         lightbox_fullscreen_alt: "Fullscreen image",
 
-        // Dataviz
         dataviz_document_title: "Dataviz - Music Charts",
         dataviz_title: "Dataviz - Music Charts",
         dataviz_subtitle: "School project about collecting and analyzing data.",
