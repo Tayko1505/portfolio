@@ -10,15 +10,11 @@ const translations = {
         nav_lang_fr: "Français",
         nav_lang_en: "Anglais",
         menu_toggle: "Menu",
-
-        /* Accessibilité - taille du texte */
         text_size_increase: "Augmenter le texte (+6px)",
         text_size_reset: "Taille par défaut",
-
         homepage_title: "Lacroix Lenny",
         homepage_subtitle: "Futur Data Engineer, étudiant en BUT Informatique parcours DATA, toujours prêt à relever de nouveaux défis.",
         homepage_document_title: "Accueil",
-
         skills_document_title: "Compétences",
         skills_title: "Compétences",
         skills_section_data_bi: "Data & Business Intelligence",
@@ -26,7 +22,6 @@ const translations = {
         skills_section_front: "Front-end",
         skills_section_back: "Back-end",
         skills_section_devops: "DevOps & Systèmes",
-
         skill_pandas_desc: "Nettoyage, transformation, analyse de <br>données, dataframes.",
         skill_powerbi_desc: "Dataviz, rapports, KPI, transformation <br> et modèles.",
         skill_grafana_desc: "Dashboards, métriques, panels, <br> visualisations.",
@@ -51,7 +46,6 @@ const translations = {
         skill_linux_desc: "Terminal, permissions, tooling,<br> workflows de dev.",
         skill_cisco_desc: "Simulation réseau, topologies, <br>routage/switching de base.",
         skill_git_desc: "Branches, PR, merge/rebase, <br> versionnage en équipe.",
-
         smashboard_document_title: "Projet SmashBoard",
         smashboard_title: "SmashBoard",
         smashboard_subtitle: "Un outil interactif pour planifier et illustrer mes entraînements de badminton",
@@ -62,7 +56,6 @@ const translations = {
         smashboard_p4_before_link: "Vous pouvez retrouver le code source de ce projet sur mon Github, en cliquant sur ",
         smashboard_link_text: "ce lien",
         smashboard_p5_before_link: "Ce projet a été déployé via CloudFlare / Wrangler, et est fréquemment utilisé par mon entraîneur. Il est retrouvable en cliquant sur ",
-
         pharmhappy_document_title: "PharmHappy",
         pharmhappy_title: "PharmHappy",
         pharmhappy_subtitle: "Projet scolaire de développement d'application avec Symfony.",
@@ -77,7 +70,6 @@ const translations = {
         pharmhappy_repo_link_text: "lien",
         pharmhappy_repo_after: " vers le dépôt GitHub du site.",
         lightbox_fullscreen_alt: "Image en plein écran",
-
         dataviz_document_title: "Dataviz - Music Charts",
         dataviz_title: "Dataviz - Music Charts",
         dataviz_subtitle: "Projet scolaire de récolte et d'analyse de données.",
@@ -101,15 +93,11 @@ const translations = {
         nav_lang_fr: "French",
         nav_lang_en: "English",
         menu_toggle: "Menu",
-
-        /* Accessibility - text size */
         text_size_increase: "Increase text (+6px)",
         text_size_reset: "Default size",
-
         homepage_title: "Lacroix Lenny",
         homepage_subtitle: "Future Data Engineer, student in BUT Computer Science DATA track, always ready to take on new challenges.",
         homepage_document_title: "Homepage",
-
         skills_document_title: "Skills",
         skills_title: "Skills",
         skills_section_data_bi: "Data & Business Intelligence",
@@ -117,7 +105,6 @@ const translations = {
         skills_section_front: "Front-end",
         skills_section_back: "Back-end",
         skills_section_devops: "DevOps & Systems",
-
         skill_pandas_desc: "Cleaning, transforming, and analyzing <br>data, dataframes.",
         skill_powerbi_desc: "Dataviz, reports, KPIs, transformations <br> and models.",
         skill_grafana_desc: "Dashboards, metrics, panels, <br> visualizations.",
@@ -142,7 +129,6 @@ const translations = {
         skill_linux_desc: "Terminal, permissions, tooling,<br> dev workflows.",
         skill_cisco_desc: "Network simulation, topologies, <br>basic routing/switching.",
         skill_git_desc: "Branches, PRs, merge/rebase, <br>team versioning.",
-
         smashboard_document_title: "SmashBoard Project",
         smashboard_title: "SmashBoard",
         smashboard_subtitle: "An interactive tool to plan and illustrate my badminton training sessions",
@@ -153,7 +139,6 @@ const translations = {
         smashboard_p4_before_link: "You can find the source code of this project on my GitHub by clicking ",
         smashboard_link_text: "this link",
         smashboard_p5_before_link: "This project was deployed using Cloudflare / Wrangler and is frequently used by my coach. You can access it by clicking ",
-
         pharmhappy_document_title: "PharmHappy",
         pharmhappy_title: "PharmHappy",
         pharmhappy_subtitle: "School project: building an application with Symfony.",
@@ -168,7 +153,6 @@ const translations = {
         pharmhappy_repo_link_text: "link",
         pharmhappy_repo_after: " to the site's GitHub repository.",
         lightbox_fullscreen_alt: "Fullscreen image",
-
         dataviz_document_title: "Dataviz - Music Charts",
         dataviz_title: "Dataviz - Music Charts",
         dataviz_subtitle: "School project about collecting and analyzing data.",
@@ -182,18 +166,15 @@ const translations = {
         dataviz_repo_link_text: "link"
     }
 };
-
 const STORAGE_KEY = 'portfolio_lang';
 const FONT_SIZE_STORAGE_KEY = 'portfolio_base_font_size_px';
 const DEFAULT_BASE_FONT_SIZE_PX = 16;
 const FONT_SIZE_STEP_PX = 6;
 const MIN_BASE_FONT_SIZE_PX = 12;
 const MAX_BASE_FONT_SIZE_PX = 28;
-
 function clampNumber(value, min, max) {
     return Math.max(min, Math.min(max, value));
 }
-
 function getStoredBaseFontSizePx() {
     try {
         const raw = localStorage.getItem(FONT_SIZE_STORAGE_KEY);
@@ -205,60 +186,44 @@ function getStoredBaseFontSizePx() {
         return null;
     }
 }
-
 function setStoredBaseFontSizePx(px) {
     try {
         localStorage.setItem(FONT_SIZE_STORAGE_KEY, String(px));
     } catch (e) {
-        // ignore (storage non dispo)
     }
 }
-
 function clearStoredBaseFontSizePx() {
     try {
         localStorage.removeItem(FONT_SIZE_STORAGE_KEY);
     } catch (e) {
-        // ignore
     }
 }
-
 function applyBaseFontSizePx(px) {
     document.documentElement.style.setProperty('--base-font-size', `${px}px`);
 }
-
 function getCurrentBaseFontSizePx() {
     const computed = getComputedStyle(document.documentElement).getPropertyValue('--base-font-size').trim();
     const n = Number.parseFloat(computed);
     if (Number.isFinite(n)) return n;
     return DEFAULT_BASE_FONT_SIZE_PX;
 }
-
 function refreshTextSizeControlsState() {
     const btnPlus = document.getElementById('fontPlus');
     const btnReset = document.getElementById('fontReset');
     if (!btnPlus || !btnReset) return;
-
     const current = getCurrentBaseFontSizePx();
-
-
-    // Bordure sur le bouton correspondant à l'état
     btnPlus.classList.remove('text-btn-active');
     btnReset.classList.remove('text-btn-active');
-
     if (current === DEFAULT_BASE_FONT_SIZE_PX) {
         btnReset.classList.add('text-btn-active');
     } else {
         btnPlus.classList.add('text-btn-active');
     }
 }
-
 function initTextSizeControls() {
     const btnPlus = document.getElementById('fontPlus');
     const btnReset = document.getElementById('fontReset');
-
-    // Les boutons n'existent pas forcément sur toutes les pages (si une page est ajoutée ailleurs)
     if (!btnPlus || !btnReset) return;
-
     btnPlus.addEventListener('click', () => {
         const current = getCurrentBaseFontSizePx();
         const next = clampNumber(current + FONT_SIZE_STEP_PX, MIN_BASE_FONT_SIZE_PX, MAX_BASE_FONT_SIZE_PX);
@@ -266,48 +231,34 @@ function initTextSizeControls() {
         setStoredBaseFontSizePx(next);
         refreshTextSizeControlsState();
     });
-
     btnReset.addEventListener('click', () => {
         applyBaseFontSizePx(DEFAULT_BASE_FONT_SIZE_PX);
         clearStoredBaseFontSizePx();
         refreshTextSizeControlsState();
     });
-
     refreshTextSizeControlsState();
 }
-
-// (STORAGE_KEY est déjà défini plus haut)
-
 function getInitialLanguage() {
     const stored = localStorage.getItem(STORAGE_KEY);
     if (stored && translations[stored]) return stored;
-
     const browserLang = (navigator.language || 'fr').slice(0, 2).toLowerCase();
     if (translations[browserLang]) return browserLang;
-
     return 'fr';
 }
-
 let currentLang = getInitialLanguage();
-
 function setLanguage(lang) {
     if (!translations[lang]) return;
     if (lang === currentLang) return;
-
     currentLang = lang;
     localStorage.setItem(STORAGE_KEY, currentLang);
-
     updateContent();
     updateFlagStyles();
 }
-
 function translateKey(key) {
     return (translations[currentLang] && translations[currentLang][key]) || null;
 }
-
 function updateDocumentMeta() {
     document.documentElement.setAttribute('lang', currentLang);
-
     const titleEl = document.querySelector('title[data-key]');
     if (titleEl) {
         const titleKey = titleEl.getAttribute('data-key');
@@ -315,24 +266,17 @@ function updateDocumentMeta() {
         if (t) titleEl.textContent = t;
     }
 }
-
 function updateContent() {
     updateDocumentMeta();
-
-    // Traduction du texte (innerHTML)
     const elements = document.querySelectorAll('[data-key]');
     elements.forEach(element => {
         const key = element.getAttribute('data-key');
-        // On ignore <title> traité via updateDocumentMeta
         if (element.tagName.toLowerCase() === 'title') return;
-
         const t = translateKey(key);
         if (t) {
             element.innerHTML = t;
         }
     });
-
-    // Traduction d'attributs: data-i18n-attr="alt" ou "title" etc.
     const attrElements = document.querySelectorAll('[data-i18n-attr][data-key]');
     attrElements.forEach(element => {
         const key = element.getAttribute('data-key');
@@ -342,35 +286,26 @@ function updateContent() {
         element.setAttribute(attr, t);
     });
 }
-
 function updateFlagStyles() {
     const btnFr = document.getElementById('flag_fr');
     const btnEn = document.getElementById('flag_en');
     if (!btnFr || !btnEn) return;
-
     btnFr.classList.remove('flag-active');
     btnEn.classList.remove('flag-active');
-
     if (currentLang === 'fr') {
         btnFr.classList.add('flag-active');
     } else {
         btnEn.classList.add('flag-active');
     }
 }
-
 document.addEventListener('DOMContentLoaded', () => {
-    // Taille de texte: applique d'abord la préférence persistée
     const storedSize = getStoredBaseFontSizePx();
     if (storedSize) {
         applyBaseFontSizePx(storedSize);
     } else {
         applyBaseFontSizePx(DEFAULT_BASE_FONT_SIZE_PX);
     }
-
-    // Assure le rendu dans la langue mémorisée même sans cliquer
     updateContent();
     updateFlagStyles();
-
-    // Puis on branche les boutons (leurs labels seront déjà traduits via updateContent)
     initTextSizeControls();
 });

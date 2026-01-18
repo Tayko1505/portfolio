@@ -11,8 +11,7 @@
     <link href="../style.css" rel="stylesheet">
     <link rel="icon" type="image/png" href="../img/Icon/icon.jpg" />
 </head>
-<body style="overflow-y: auto">
-
+<body class="overflow-y-auto">
 <button class="menu-toggle" onclick="toggleMenu(event)">
     <i class="fa-solid fa-bars"></i>
 </button>
@@ -31,24 +30,21 @@
         </li>
     </ul>
     <div class="menu-flags">
-        <img src="../img/téléchargement.png" data-key="nav_lang_fr" data-i18n-attr="alt" alt="Français" title="Français" style="border-radius: 5px; width: 48px; height: 30px; cursor: pointer;" onclick="setLanguage('fr')" id="flag_fr">
-        <img src="../img/en.png" data-key="nav_lang_en" data-i18n-attr="alt" alt="Anglais" title="Anglais" style="border-radius: 5px; width: 48px; height: 30px; cursor: pointer;" onclick="setLanguage('en')" id="flag_en">
+        <img src="../img/téléchargement.png" data-key="nav_lang_fr" data-i18n-attr="alt" alt="Français" title="Français" onclick="setLanguage('fr')" id="flag_fr">
+        <img src="../img/en.png" data-key="nav_lang_en" data-i18n-attr="alt" alt="Anglais" title="Anglais" onclick="setLanguage('en')" id="flag_en">
         <button type="button" id="fontPlus">A+</button>
         <button type="button" id="fontReset">A-</button>
         <button type="button" id="themeDark" class="theme-btn theme-dark" aria-pressed="true" title="Thème sombre"></button>
         <button type="button" id="themeLight" class="theme-btn theme-light" aria-pressed="false" title="Thème clair"></button>
     </div>
 </div>
-
 <div class="container project-page">
     <h1 data-key="smashboard_title">SmashBoard</h1>
     <p class="subtitle" data-key="smashboard_subtitle">Un outil interactif pour planifier et illustrer mes entraînements de badminton</p>
-
     <div class="project-card">
         <div class="project-image">
             <video src="../video/smashboard.webm" controls></video>
         </div>
-
         <div class="project-content">
             <p data-key="smashboard_p1">
                 Ce projet m’a permis de créer un outil visuel et interactif pensé pour le badminton.
@@ -59,15 +55,12 @@
                 Cet outil propose une liste simple d'outils, permettant de dessiner des lignes droites, des lignes en cloches, des flèches,
                 des traits libres, supprimer les traits à proximité, de placer des joueurs et de les déplacer.
             </p>
-
             <p data-key="smashboard_p3">
                 Il a également été pensé pour une utilisation fréquente sur mobile, comme l'illustre la capture d'écran ci-dessous.
             </p>
-
             <div class="project-image">
                 <img src="../img/smashboard_mobile.png" data-key="smashboard_img_mobile_alt" data-i18n-attr="alt" alt="SmashBoard sur mobile" />
             </div>
-
             <p>
                 <span data-key="smashboard_p4_before_link">Vous pouvez retrouver le code source de ce projet sur mon Github, en cliquant sur </span>
                 <a href="https://github.com/Tayko1505/smashboard" data-key="smashboard_link_text">ce lien</a>.
@@ -80,7 +73,6 @@
         </div>
     </div>
 </div>
-
 <script src="../javascript/menu.js"></script>
 </body>
 </html>

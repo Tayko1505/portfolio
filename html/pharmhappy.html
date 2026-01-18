@@ -10,41 +10,8 @@
     <script src="../javascript/theme.js"></script>
     <link href="../style.css" rel="stylesheet">
     <link rel="icon" type="image/png" href="../img/Icon/icon.jpg" />
-    <style>
-        .lightbox {
-            display: none;
-            position: fixed;
-            z-index: 9999;
-            padding: 2rem;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background: rgba(0,0,0,0.9);
-            justify-content: center;
-            align-items: center;
-        }
-
-        .lightbox img {
-            max-width: 90%;
-            max-height: 90%;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(255,255,255,0.3);
-        }
-
-        .lightbox-close {
-            position: absolute;
-            top: 20px;
-            right: 40px;
-            font-size: 3rem;
-            font-weight: bold;
-            color: white;
-            cursor: pointer;
-        }
-    </style>
 </head>
-<body style="overflow-y: auto">
+<body class="overflow-y-auto">
 <button class="menu-toggle" onclick="toggleMenu(event)">
     <i class="fa-solid fa-bars"></i>
 </button>
@@ -63,19 +30,17 @@
         </li>
     </ul>
     <div class="menu-flags">
-        <img src="../img/téléchargement.png" data-key="nav_lang_fr" data-i18n-attr="alt" alt="Français" title="Français" style="border-radius: 5px; width: 48px; height: 30px; cursor: pointer;" onclick="setLanguage('fr')" id="flag_fr">
-        <img src="../img/en.png" data-key="nav_lang_en" data-i18n-attr="alt" alt="Anglais" title="Anglais" style="border-radius: 5px; width: 48px; height: 30px; cursor: pointer;" onclick="setLanguage('en')" id="flag_en">
+        <img src="../img/téléchargement.png" data-key="nav_lang_fr" data-i18n-attr="alt" alt="Français" title="Français" onclick="setLanguage('fr')" id="flag_fr">
+        <img src="../img/en.png" data-key="nav_lang_en" data-i18n-attr="alt" alt="Anglais" title="Anglais" onclick="setLanguage('en')" id="flag_en">
         <button type="button" id="fontPlus">A+</button>
         <button type="button" id="fontReset">A-</button>
         <button type="button" id="themeDark" class="theme-btn theme-dark" aria-pressed="true" title="Thème sombre"></button>
         <button type="button" id="themeLight" class="theme-btn theme-light" aria-pressed="false" title="Thème clair"></button>
     </div>
 </div>
-
 <div class="container project-page">
     <h1 data-key="pharmhappy_title">PharmHappy</h1>
     <p class="subtitle" data-key="pharmhappy_subtitle">Projet scolaire de développement d'application avec Symfony.</p>
-
     <div class="project-card">
         <div class="project-content">
             <p data-key="pharmhappy_p1">
@@ -134,6 +99,5 @@
 </div>
 <script src="../javascript/menu.js"></script>
 <script src="../javascript/carousel.js"></script>
-
 </body>
 </html>

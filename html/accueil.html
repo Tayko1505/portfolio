@@ -11,7 +11,7 @@
   <link href="../style.css" rel="stylesheet">
   <link rel="icon" type="image/png" href="../img/Icon/icon.jpg" />
 </head>
-<body style="overflow-y: hidden">
+<body class="overflow-y-hidden">
   <button class="menu-toggle" onclick="toggleMenu(event)">
     <i class="fa-solid fa-bars"></i>
   </button>
@@ -30,16 +30,15 @@
       </li>
     </ul>
     <div class="menu-flags">
-      <img src="../img/téléchargement.png" data-key="nav_lang_fr" data-i18n-attr="alt" alt="Français" title="Français" style="width: 48px; height: 30px; cursor: pointer; border-radius: 5px" onclick="setLanguage('fr')" id="flag_fr">
-      <img src="../img/en.png" data-key="nav_lang_en" data-i18n-attr="alt" alt="Anglais" title="Anglais" style="width: 48px; height: 30px; cursor: pointer; border-radius: 5px" onclick="setLanguage('en')" id="flag_en">
+      <img src="../img/téléchargement.png" data-key="nav_lang_fr" data-i18n-attr="alt" alt="Français" title="Français" onclick="setLanguage('fr')" id="flag_fr">
+      <img src="../img/en.png" data-key="nav_lang_en" data-i18n-attr="alt" alt="Anglais" title="Anglais" onclick="setLanguage('en')" id="flag_en">
       <button type="button" id="fontPlus">A+</button>
       <button type="button" id="fontReset">A-</button>
       <button type="button" id="themeDark" class="theme-btn theme-dark" aria-pressed="true" title="Thème sombre"></button>
       <button type="button" id="themeLight" class="theme-btn theme-light" aria-pressed="false" title="Thème clair"></button>
     </div>
   </div>
-
-  <div class="container" style="display: flex; align-items: center; height: 100%">
+  <div class="container homepage-fullheight">
     <h1 data-key="homepage_title">Lacroix Lenny</h1>
     <p data-key="homepage_subtitle">Futur Data Engineer, étudiant en BUT Informatique parcours DATA, toujours prêt à relever de nouveaux défis.</p>
   </div>

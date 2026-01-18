@@ -3,40 +3,25 @@
     --text: #f2f2f2;
     --accent: #38bdf8;
     --font-main: 'Space Grotesk', sans-serif;
-
-    /* Taille de police globale (pilotée par JS) */
     --base-font-size: 16px;
-
-    /* Cartes / bordures (projets + e-cards) */
     --card-radius: 16px;
     --card-border-size: 2px;
     --card-border-gradient: linear-gradient(90deg, var(--accent), #a855f7);
-
-    /* Couleurs UI */
     --panel-bg: #1a1a1d;
     --card-bg: rgba(47, 43, 43, 0.13);
     --shadow: 0 8px 30px rgba(0,0,0,0.35);
-
     --media-bg: #111;
-
-    /* Bordure 'actif/sélectionné' (drapeaux, taille de police, thème) */
     --selected-border: var(--accent);
 }
 
-/* Thème clair (activé via JS: <html data-theme="light">) */
 html[data-theme="light"] {
     --bg: #f6f7fb;
     --text: #0e0e10;
-
-    /* Accent un peu plus sombre pour garder de la lisibilité sur fond clair */
     --accent: #0284c7;
-
     --panel-bg: #ffffff;
     --card-bg: rgba(0, 0, 0, 0.04);
     --shadow: 0 8px 30px rgba(0,0,0,0.12);
-
     --media-bg: #f0f2f6;
-
     --selected-border: var(--accent);
 }
 
@@ -54,7 +39,6 @@ html, body {
     position: relative;
 }
 
-/* Applique la taille de base à tout le document (rem = relatif à html) */
 html {
     font-size: var(--base-font-size);
 }
@@ -63,7 +47,6 @@ html {
     border: solid var(--selected-border) 2px;
 }
 
-/* Drapeaux + contrôles A+/A- dans le menu (grille 2 colonnes) */
 .menu-flags {
     display: grid;
     grid-template-columns: repeat(2, 48px);
@@ -76,6 +59,11 @@ html {
 .menu-flags button {
     width: 48px;
     height: 30px;
+}
+
+.menu-flags img {
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 .menu-flags button {
@@ -144,23 +132,19 @@ html {
     padding: var(--card-border-size);
     border-radius: var(--card-radius);
     background: var(--card-border-gradient);
-
-    /* Fallback si mask non supporté: double background */
     border: var(--card-border-size) solid transparent;
     background:
             linear-gradient(var(--card-bg), var(--card-bg)) padding-box,
             var(--card-border-gradient) border-box;
 
-    /* Bordure dégradée (rectangle), intérieur découpé */
-    -webkit-mask:
-            linear-gradient(0deg, #000 0%, #000 100%) content-box,
+    -webkit-mask-image:
+            linear-gradient(0deg, #000 0%, #000 100%),
             linear-gradient(0deg, #000 0%, #000 100%);
     -webkit-mask-clip: content-box, border-box;
     -webkit-mask-composite: xor;
 
-    /* Fallback standard (Firefox etc.) */
-    mask:
-            linear-gradient(0deg, #000 0%, #000 100%) content-box,
+    mask-image:
+            linear-gradient(0deg, #000 0%, #000 100%),
             linear-gradient(0deg, #000 0%, #000 100%);
     mask-clip: content-box, border-box;
     mask-composite: exclude;
@@ -205,9 +189,8 @@ a:visited {
     color: #ffffff;
 }
 
-/* En thème clair, le blanc n'est pas lisible : on adapte les états visited/hover */
 html[data-theme="light"] a:visited {
-    color: #1f2937; /* gris foncé lisible */
+    color: #1f2937;
 }
 
 html[data-theme="light"] a:hover {
@@ -285,7 +268,6 @@ html[data-theme="light"] a:hover {
     font-weight: bold;
 }
 
-
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -300,20 +282,14 @@ html[data-theme="light"] a:hover {
 .e-card {
     animation: fadeIn 1.2s ease forwards;
     box-shadow: 0px 8px 28px -9px rgba(0,0,0,0.45);
-
-    /* Nécessaire au ::before pour clipper la bordure dégradée */
     position: relative;
     z-index: 0;
     overflow: hidden;
-
     width: 100%;
     max-width: 360px;
     height: 240px;
     border-radius: var(--card-radius);
-
-    /* Fond de carte (cohérent avec le style global) */
     background: var(--card-bg);
-
     display: flex;
     align-items: center;
     justify-content: center;
@@ -326,23 +302,19 @@ html[data-theme="light"] a:hover {
     padding: var(--card-border-size);
     border-radius: var(--card-radius);
     background: var(--card-border-gradient);
-
-    /* Fallback si mask non supporté: double background */
     border: var(--card-border-size) solid transparent;
     background:
             linear-gradient(var(--card-bg), var(--card-bg)) padding-box,
             var(--card-border-gradient) border-box;
 
-    /* Bordure dégradée (rectangle), intérieur découpé */
-    -webkit-mask:
-            linear-gradient(0deg, #000 0%, #000 100%) content-box,
+    -webkit-mask-image:
+            linear-gradient(0deg, #000 0%, #000 100%),
             linear-gradient(0deg, #000 0%, #000 100%);
     -webkit-mask-clip: content-box, border-box;
     -webkit-mask-composite: xor;
 
-    /* Fallback standard (Firefox etc.) */
-    mask:
-            linear-gradient(0deg, #000 0%, #000 100%) content-box,
+    mask-image:
+            linear-gradient(0deg, #000 0%, #000 100%),
             linear-gradient(0deg, #000 0%, #000 100%);
     mask-clip: content-box, border-box;
     mask-composite: exclude;
@@ -350,7 +322,6 @@ html[data-theme="light"] a:hover {
     z-index: -1;
 }
 
-/* Assure que le contenu reste au-dessus de la bordure sur tous les navigateurs */
 .e-card > * {
     position: relative;
     z-index: 1;
@@ -510,7 +481,6 @@ video {
     cursor: pointer;
 }
 
-/* Séparateurs de sections (page Compétences) */
 .skill-section {
     grid-column: 1 / -1;
     text-align: center;
@@ -635,7 +605,6 @@ video {
         display: block;
         margin: 0 auto;
     }
-
 }
 
 @media (max-width: 480px) {
@@ -652,7 +621,6 @@ video {
 
     .infotop {
         font-size: 1rem;
-        /* "top" ne s'applique pas sans positionnement, on le retire pour éviter les écarts inattendus */
         top: auto;
     }
 
@@ -665,9 +633,8 @@ video {
     }
 }
 
-/* Boutons de thème dans le menu (noir/blanc) */
 .menu-flags button.theme-btn {
-    border-radius: 5px; /* pour matcher les drapeaux */
+    border-radius: 5px;
 }
 
 .menu-flags button.theme-btn.theme-dark {
@@ -681,7 +648,28 @@ video {
     border-color: rgba(0, 0, 0, 0.25);
 }
 
-/* Quand un bouton de thème est actif, même bordure que les autres sélections */
 .menu-flags button.theme-btn.text-btn-active {
     border-color: var(--selected-border);
+}
+
+body.overflow-y-auto {
+    overflow-y: auto;
+}
+
+body.overflow-y-hidden {
+    overflow-y: hidden;
+}
+
+.homepage-fullheight {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.dataviz-streams-margin {
+    margin-bottom: 5px;
+}
+
+.lightbox-hint-margin {
+    margin-left: 5px;
 }
