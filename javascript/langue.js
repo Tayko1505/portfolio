@@ -240,8 +240,6 @@ function refreshTextSizeControlsState() {
 
     const current = getCurrentBaseFontSizePx();
 
-    // Reset désactivé seulement quand on est exactement au défaut
-    btnReset.disabled = current === DEFAULT_BASE_FONT_SIZE_PX;
 
     // Bordure sur le bouton correspondant à l'état
     btnPlus.classList.remove('text-btn-active');

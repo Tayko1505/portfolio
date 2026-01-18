@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/4aec831e53.js" crossorigin="anonymous"></script>
     <script src="../javascript/langue.js"></script>
+    <script src="../javascript/theme.js"></script>
     <link href="../style.css" rel="stylesheet">
     <link rel="icon" type="image/png" href="../img/Icon/icon.jpg" />
 </head>
@@ -34,6 +35,8 @@
         <img src="../img/en.png" data-key="nav_lang_en" data-i18n-attr="alt" alt="Anglais" title="Anglais" style="border-radius: 5px; width: 48px; height: 30px; cursor: pointer;" onclick="setLanguage('en')" id="flag_en">
         <button type="button" id="fontPlus">A+</button>
         <button type="button" id="fontReset">A-</button>
+        <button type="button" id="themeDark" class="theme-btn theme-dark" aria-pressed="true" title="Thème sombre"></button>
+        <button type="button" id="themeLight" class="theme-btn theme-light" aria-pressed="false" title="Thème clair"></button>
     </div>
 </div>
 
@@ -106,13 +109,13 @@
                     <img src="../img/song%20streams%20over%20time%20per%20country.png" alt="">
                     <img src="../img/streams%20per%20region.png" alt=""  style="margin-bottom: 5px">
                 </div>
-                <small data-key="lightbox_hint">Cliquez sur l'image pour l'afficher en plein écran.</small>
+                <small data-key="lightbox_hint" style="margin-left: 5px">Cliquez sur l'image pour l'afficher en plein écran.</small>
                 <button class="carousel-btn next">&#10095;</button>
-                <p>
-                    <span data-key="dataviz_repo_text">Vous pouvez retrouver le dépôt Github sur ce </span>
-                    <a href="https://github.com/Tayko1505/music-charts/" data-key="dataviz_repo_link_text">lien</a>
-                </p>
             </div>
+            <p>
+                <span data-key="dataviz_repo_text">Vous pouvez retrouver le dépôt Github sur ce </span>
+                <a href="https://github.com/Tayko1505/music-charts/" data-key="dataviz_repo_link_text">lien</a>
+            </p>
         </div>
     </div>
 </div>
