@@ -11,6 +11,10 @@ const translations = {
         nav_lang_en: "Anglais",
         menu_toggle: "Menu",
 
+        /* Accessibilité - taille du texte */
+        text_size_increase: "Augmenter le texte (+6px)",
+        text_size_reset: "Taille par défaut",
+
         homepage_title: "Lacroix Lenny",
         homepage_subtitle: "Futur Data Engineer, étudiant en BUT Informatique parcours DATA, toujours prêt à relever de nouveaux défis.",
         homepage_document_title: "Accueil",
@@ -98,6 +102,10 @@ const translations = {
         nav_lang_en: "English",
         menu_toggle: "Menu",
 
+        /* Accessibility - text size */
+        text_size_increase: "Increase text (+6px)",
+        text_size_reset: "Default size",
+
         homepage_title: "Lacroix Lenny",
         homepage_subtitle: "Future Data Engineer, student in BUT Computer Science DATA track, always ready to take on new challenges.",
         homepage_document_title: "Homepage",
@@ -176,6 +184,101 @@ const translations = {
 };
 
 const STORAGE_KEY = 'portfolio_lang';
+const FONT_SIZE_STORAGE_KEY = 'portfolio_base_font_size_px';
+const DEFAULT_BASE_FONT_SIZE_PX = 16;
+const FONT_SIZE_STEP_PX = 6;
+const MIN_BASE_FONT_SIZE_PX = 12;
+const MAX_BASE_FONT_SIZE_PX = 28;
+
+function clampNumber(value, min, max) {
+    return Math.max(min, Math.min(max, value));
+}
+
+function getStoredBaseFontSizePx() {
+    try {
+        const raw = localStorage.getItem(FONT_SIZE_STORAGE_KEY);
+        if (!raw) return null;
+        const n = Number(raw);
+        if (!Number.isFinite(n)) return null;
+        return clampNumber(n, MIN_BASE_FONT_SIZE_PX, MAX_BASE_FONT_SIZE_PX);
+    } catch (e) {
+        return null;
+    }
+}
+
+function setStoredBaseFontSizePx(px) {
+    try {
+        localStorage.setItem(FONT_SIZE_STORAGE_KEY, String(px));
+    } catch (e) {
+        // ignore (storage non dispo)
+    }
+}
+
+function clearStoredBaseFontSizePx() {
+    try {
+        localStorage.removeItem(FONT_SIZE_STORAGE_KEY);
+    } catch (e) {
+        // ignore
+    }
+}
+
+function applyBaseFontSizePx(px) {
+    document.documentElement.style.setProperty('--base-font-size', `${px}px`);
+}
+
+function getCurrentBaseFontSizePx() {
+    const computed = getComputedStyle(document.documentElement).getPropertyValue('--base-font-size').trim();
+    const n = Number.parseFloat(computed);
+    if (Number.isFinite(n)) return n;
+    return DEFAULT_BASE_FONT_SIZE_PX;
+}
+
+function refreshTextSizeControlsState() {
+    const btnPlus = document.getElementById('fontPlus');
+    const btnReset = document.getElementById('fontReset');
+    if (!btnPlus || !btnReset) return;
+
+    const current = getCurrentBaseFontSizePx();
+
+    // Reset désactivé seulement quand on est exactement au défaut
+    btnReset.disabled = current === DEFAULT_BASE_FONT_SIZE_PX;
+
+    // Bordure sur le bouton correspondant à l'état
+    btnPlus.classList.remove('text-btn-active');
+    btnReset.classList.remove('text-btn-active');
+
+    if (current === DEFAULT_BASE_FONT_SIZE_PX) {
+        btnReset.classList.add('text-btn-active');
+    } else {
+        btnPlus.classList.add('text-btn-active');
+    }
+}
+
+function initTextSizeControls() {
+    const btnPlus = document.getElementById('fontPlus');
+    const btnReset = document.getElementById('fontReset');
+
+    // Les boutons n'existent pas forcément sur toutes les pages (si une page est ajoutée ailleurs)
+    if (!btnPlus || !btnReset) return;
+
+    btnPlus.addEventListener('click', () => {
+        const current = getCurrentBaseFontSizePx();
+        const next = clampNumber(current + FONT_SIZE_STEP_PX, MIN_BASE_FONT_SIZE_PX, MAX_BASE_FONT_SIZE_PX);
+        applyBaseFontSizePx(next);
+        setStoredBaseFontSizePx(next);
+        refreshTextSizeControlsState();
+    });
+
+    btnReset.addEventListener('click', () => {
+        applyBaseFontSizePx(DEFAULT_BASE_FONT_SIZE_PX);
+        clearStoredBaseFontSizePx();
+        refreshTextSizeControlsState();
+    });
+
+    refreshTextSizeControlsState();
+}
+
+// (STORAGE_KEY est déjà défini plus haut)
 
 function getInitialLanguage() {
     const stored = localStorage.getItem(STORAGE_KEY);
@@ -258,7 +361,18 @@ function updateFlagStyles() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Taille de texte: applique d'abord la préférence persistée
+    const storedSize = getStoredBaseFontSizePx();
+    if (storedSize) {
+        applyBaseFontSizePx(storedSize);
+    } else {
+        applyBaseFontSizePx(DEFAULT_BASE_FONT_SIZE_PX);
+    }
+
     // Assure le rendu dans la langue mémorisée même sans cliquer
     updateContent();
     updateFlagStyles();
+
+    // Puis on branche les boutons (leurs labels seront déjà traduits via updateContent)
+    initTextSizeControls();
 });
