@@ -143,6 +143,7 @@ html {
     -webkit-mask-clip: content-box, border-box;
     -webkit-mask-composite: xor;
 
+    /* Fallbacks standards (aident aussi l'analyse CSS de l'IDE) */
     mask-image:
             linear-gradient(0deg, #000 0%, #000 100%),
             linear-gradient(0deg, #000 0%, #000 100%);
@@ -238,6 +239,8 @@ html[data-theme="light"] a:hover {
     right: 0;
 }
 
+/* Suppression des styles menu-header ajoutés */
+
 .side-menu h2 {
     font-size: 1.3rem;
     margin-bottom: 1rem;
@@ -287,7 +290,9 @@ html[data-theme="light"] a:hover {
     overflow: hidden;
     width: 100%;
     max-width: 360px;
-    height: 240px;
+    height: auto;
+    min-height: 240px;
+    padding: 1rem;
     border-radius: var(--card-radius);
     background: var(--card-bg);
     display: flex;
@@ -313,6 +318,7 @@ html[data-theme="light"] a:hover {
     -webkit-mask-clip: content-box, border-box;
     -webkit-mask-composite: xor;
 
+    /* Fallbacks standards (aident aussi l'analyse CSS de l'IDE) */
     mask-image:
             linear-gradient(0deg, #000 0%, #000 100%),
             linear-gradient(0deg, #000 0%, #000 100%);
@@ -339,6 +345,15 @@ html[data-theme="light"] a:hover {
     width: 3em;
 }
 
+.infotop {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem;
+}
+
 .name {
     font-size: 0.9rem;
     font-weight: 400;
@@ -346,10 +361,7 @@ html[data-theme="light"] a:hover {
     top: 0;
     margin-left: 5px;
     margin-right: 5px;
-}
-
-.infotop {
-    text-align: center;
+    line-height: 1.35;
 }
 
 .listCard {
@@ -576,7 +588,8 @@ video {
 
     .e-card {
         max-width: 100%;
-        height: 220px;
+        height: auto;
+        min-height: 220px;
     }
 
     :root {
@@ -616,7 +629,8 @@ video {
     }
 
     .e-card {
-        height: 210px;
+        height: auto;
+        min-height: 210px;
     }
 
     .infotop {

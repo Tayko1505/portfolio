@@ -59,7 +59,7 @@ const translations = {
         pharmhappy_document_title: "PharmHappy",
         pharmhappy_title: "PharmHappy",
         pharmhappy_subtitle: "Projet scolaire de développement d'application avec Symfony.",
-        pharmhappy_p1: "Dans le cadre de ma formation, par groupe de 5, nous avons du réaliser une application complète, de la phase d'analyse, jusqu'au développement complet de l'application, en y ajoutant une suite de tests unitaires. Également, le site a été déployé entièrement sur une machine virtuelle, accessible dans le réseau de l'IUT.",
+        pharmhappy_p1: "Dans le cadre de ma formation, par groupe de 6, nous avons du réaliser une application complète, de la phase d'analyse, jusqu'au développement complet de l'application, en y ajoutant une suite de tests unitaires. Également, le site a été déployé entièrement sur une machine virtuelle, accessible dans le réseau de l'IUT.",
         pharmhappy_p2: "La phase d'analyse nous a présenté le sujet : nous devions développer une application de gestion de stock pharmaceutique pour des gestionnaires, permettant également à des clients de commander sur le site. Nous devions aussi gérer le cas des pharmacies, qui avait accès à un stock de médicament plus complet. Les gestionnaires devaient pouvoir gérer les stocks et la date de péremption des échantillons.",
         pharmhappy_p3: "En partant de l'énoncé, nous avons donc créé un diagramme de navigabilité, des cas d'usages avec leur scénario nominal et alternatif, une charte graphique et des maquettes de pages avec <b>Figma</b>.",
         pharmhappy_p4: "Une fois la phase d'analyse terminée, nous avons pu lancer le développement, avec <b>PHP</b> et le framework <b>Symfony</b>. Nous avons suivi le modèle vu / contrôleur avec nos entités, en utilisant des templates Twig pour le rendu du site.",
@@ -80,7 +80,8 @@ const translations = {
         dataviz_p4: "Pour compléter nos tableaux de bord, nous avons ajouté une deuxième source de données, provenant du site <a href=\"https://acousticbrainz.org/\">AcousticBrainz</a>, qui permet d'obtenir des informations musicales sur les morceaux : leur style ou leur genre, également triables par région. Nous avons aussi reproduit certains dashboards réalisés sur Power BI.",
         dataviz_metabase_intro: "Voici les visuels sur <b>Metabase</b> :<br>",
         dataviz_repo_text: "Vous pouvez retrouver le dépôt Github sur ce ",
-        dataviz_repo_link_text: "lien"
+        dataviz_repo_link_text: "lien",
+        ia_competence: "Intelligence Artificielle"
     },
     en: {
         nav_title: "Navigation",
@@ -142,7 +143,7 @@ const translations = {
         pharmhappy_document_title: "PharmHappy",
         pharmhappy_title: "PharmHappy",
         pharmhappy_subtitle: "School project: building an application with Symfony.",
-        pharmhappy_p1: "As part of my studies, in a group of 5, we had to build a complete application from analysis all the way to full development, including a suite of unit tests. The site was also fully deployed on a virtual machine accessible within the university network.",
+        pharmhappy_p1: "As part of my studies, in a group of 6, we had to build a complete application from analysis all the way to full development, including a suite of unit tests. The site was also fully deployed on a virtual machine accessible within the university network.",
         pharmhappy_p2: "During analysis, we were given the requirements: we had to develop a pharmaceutical stock management app for managers, and also allow customers to order products on the site. We also had to handle pharmacies, which had access to a broader drug inventory. Managers had to manage stock and sample expiration dates.",
         pharmhappy_p3: "Starting from the statement, we built a navigation diagram, use cases with nominal and alternate scenarios, a style guide, and page mockups with <b>Figma</b>.",
         pharmhappy_p4: "Once the analysis phase was complete, we started development with <b>PHP</b> and the <b>Symfony</b> framework. We followed the model/view/controller approach with our entities and used Twig templates for rendering.",
@@ -163,7 +164,8 @@ const translations = {
         dataviz_p4: "To complement our dashboards, we added a second data source from <a href=\"https://acousticbrainz.org/\">AcousticBrainz</a>, which provides musical information about tracks (style/genre), also sortable by region. We also reproduced some dashboards initially made in Power BI.",
         dataviz_metabase_intro: "Here are the <b>Metabase</b> visuals:<br>",
         dataviz_repo_text: "You can find the GitHub repository via this ",
-        dataviz_repo_link_text: "link"
+        dataviz_repo_link_text: "link",
+        ia_competence: "Artificial Intelligence"
     }
 };
 const STORAGE_KEY = 'portfolio_lang';
@@ -211,31 +213,44 @@ function refreshTextSizeControlsState() {
     const btnPlus = document.getElementById('fontPlus');
     const btnReset = document.getElementById('fontReset');
     if (!btnPlus || !btnReset) return;
+
     const current = getCurrentBaseFontSizePx();
+    const increasedValue = DEFAULT_BASE_FONT_SIZE_PX + FONT_SIZE_STEP_PX;
+
+    // Actif visuel
     btnPlus.classList.remove('text-btn-active');
     btnReset.classList.remove('text-btn-active');
+
     if (current === DEFAULT_BASE_FONT_SIZE_PX) {
         btnReset.classList.add('text-btn-active');
     } else {
         btnPlus.classList.add('text-btn-active');
     }
+
+    // Activation/désactivation
+    btnPlus.disabled = current >= increasedValue;
+    btnReset.disabled = current === DEFAULT_BASE_FONT_SIZE_PX;
 }
+
 function initTextSizeControls() {
     const btnPlus = document.getElementById('fontPlus');
     const btnReset = document.getElementById('fontReset');
     if (!btnPlus || !btnReset) return;
+
     btnPlus.addEventListener('click', () => {
-        const current = getCurrentBaseFontSizePx();
-        const next = clampNumber(current + FONT_SIZE_STEP_PX, MIN_BASE_FONT_SIZE_PX, MAX_BASE_FONT_SIZE_PX);
+        // Une seule augmentation: on passe directement à DEFAULT + STEP (avec clamp).
+        const next = clampNumber(DEFAULT_BASE_FONT_SIZE_PX + FONT_SIZE_STEP_PX, MIN_BASE_FONT_SIZE_PX, MAX_BASE_FONT_SIZE_PX);
         applyBaseFontSizePx(next);
         setStoredBaseFontSizePx(next);
         refreshTextSizeControlsState();
     });
+
     btnReset.addEventListener('click', () => {
         applyBaseFontSizePx(DEFAULT_BASE_FONT_SIZE_PX);
         clearStoredBaseFontSizePx();
         refreshTextSizeControlsState();
     });
+
     refreshTextSizeControlsState();
 }
 function getInitialLanguage() {
