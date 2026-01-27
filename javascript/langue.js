@@ -81,7 +81,13 @@ const translations = {
         dataviz_metabase_intro: "Voici les visuels sur <b>Metabase</b> :<br>",
         dataviz_repo_text: "Vous pouvez retrouver le dépôt Github sur ce ",
         dataviz_repo_link_text: "lien",
-        ia_competence: "Intelligence Artificielle"
+        ia_competence: "Intelligence Artificielle",
+        projects_document_title: "Projets",
+        projects_page_title: "Mes Projets",
+        projects_page_subtitle: "Découvrez mes réalisations en développement et data analysis",
+        smashboard_preview_desc: "Un outil interactif pour planifier et illustrer les entraînements de badminton avec des schémas tactiques.",
+        pharmhappy_preview_desc: "Application de gestion de stock pharmaceutique avec système de commande et chatbot intelligent.",
+        dataviz_preview_desc: "Analyse de données musicales avec récolte automatisée et tableaux de bord interactifs."
     },
     en: {
         nav_title: "Navigation",
@@ -165,7 +171,13 @@ const translations = {
         dataviz_metabase_intro: "Here are the <b>Metabase</b> visuals:<br>",
         dataviz_repo_text: "You can find the GitHub repository via this ",
         dataviz_repo_link_text: "link",
-        ia_competence: "Artificial Intelligence"
+        ia_competence: "Artificial Intelligence",
+        projects_document_title: "Projects",
+        projects_page_title: "My Projects",
+        projects_page_subtitle: "Discover my work in development and data analysis",
+        smashboard_preview_desc: "An interactive tool to plan and illustrate badminton training sessions with tactical diagrams.",
+        pharmhappy_preview_desc: "Pharmaceutical stock management application with ordering system and intelligent chatbot.",
+        dataviz_preview_desc: "Music data analysis with automated collection and interactive dashboards."
     }
 };
 const STORAGE_KEY = 'portfolio_lang';

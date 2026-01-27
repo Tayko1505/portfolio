@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title data-key="projects_document_title">Projets</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/4aec831e53.js" crossorigin="anonymous"></script>
+    <script src="../javascript/langue.js"></script>
+    <script src="../javascript/theme.js"></script>
+    <link href="../style.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="../img/icon/portfolio.jpg" />
+</head>
+<body>
+<button class="menu-toggle" onclick="toggleMenu(event)">
+    <i class="fa-solid fa-bars"></i>
+</button>
+<div class="side-menu" id="sideMenu">
+    <h2 data-key="nav_title">Navigation</h2>
+    <ul>
+        <li><a href="accueil.html" data-key="nav_home">Accueil</a></li>
+        <li><a href="competences.html" data-key="nav_skills">Compétences</a></li>
+        <li>
+            <a href="projets.html" data-key="nav_projects">Projets</a>
+            <ul>
+                <li><a href="smashboard.html" data-key="nav_project_smashboard">SmashBoard</a></li>
+                <li><a href="pharmhappy.html" data-key="nav_project_pharmhappy">PharmHappy</a></li>
+                <li><a href="dataviz.html" data-key="nav_project_dataviz">Music Charts</a></li>
+            </ul>
+        </li>
+    </ul>
+    <div class="menu-flags">
+        <img src="../img/drapeau_fr.png" data-key="nav_lang_fr" data-i18n-attr="alt" alt="Français" title="Français" onclick="setLanguage('fr')" id="flag_fr">
+        <img src="../img/drapeau_en.png" data-key="nav_lang_en" data-i18n-attr="alt" alt="Anglais" title="Anglais" onclick="setLanguage('en')" id="flag_en">
+        <button type="button" id="fontPlus">A+</button>
+        <button type="button" id="fontReset">A-</button>
+        <button type="button" id="themeDark" class="theme-btn theme-dark" aria-pressed="true" title="Thème sombre"></button>
+        <button type="button" id="themeLight" class="theme-btn theme-light" aria-pressed="false" title="Thème clair"></button>
+    </div>
+</div>
+<div class="container projects-list-page">
+    <h1 data-key="projects_page_title">Mes Projets</h1>
+    <p class="subtitle" data-key="projects_page_subtitle">Découvrez mes réalisations en développement et data analysis</p>
+
+    <div class="projects-grid">
+        <a href="smashboard.html" class="project-card-link">
+            <div class="project-preview-card">
+                <div class="project-preview-header">
+                    <h2 data-key="nav_project_smashboard">SmashBoard</h2>
+                </div>
+                <div class="project-preview-content">
+                    <p data-key="smashboard_preview_desc">Un outil interactif pour planifier et illustrer les entraînements de badminton avec des schémas tactiques.</p>
+                    <div class="project-tags">
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">Canvas</span>
+                        <span class="tag">Mobile</span>
+                    </div>
+                </div>
+            </div>
+        </a>
+
+        <a href="pharmhappy.html" class="project-card-link">
+            <div class="project-preview-card">
+                <div class="project-preview-header">
+                    <h2 data-key="nav_project_pharmhappy">PharmHappy</h2>
+                </div>
+                <div class="project-preview-content">
+                    <p data-key="pharmhappy_preview_desc">Application de gestion de stock pharmaceutique avec système de commande et chatbot intelligent.</p>
+                    <div class="project-tags">
+                        <span class="tag">PHP</span>
+                        <span class="tag">Symfony</span>
+                        <span class="tag">API OpenAI</span>
+                    </div>
+                </div>
+            </div>
+        </a>
+
+        <a href="dataviz.html" class="project-card-link">
+            <div class="project-preview-card">
+                <div class="project-preview-header">
+                    <h2 data-key="nav_project_dataviz">Music Charts</h2>
+                </div>
+                <div class="project-preview-content">
+                    <p data-key="dataviz_preview_desc">Analyse de données musicales avec récolte automatisée et tableaux de bord interactifs.</p>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Power BI</span>
+                        <span class="tag">Metabase</span>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+<script src="../javascript/menu.js"></script>
+</body>
+</html>
+
