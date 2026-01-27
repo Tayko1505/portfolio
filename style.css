@@ -185,9 +185,19 @@ p {
     text-align: center;
 }
 
+a {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
 a:hover,
 a:visited {
     color: #ffffff;
+}
+
+html[data-theme="light"] a {
+    color: #0284c7;
+    text-decoration: underline;
 }
 
 html[data-theme="light"] a:visited {
@@ -239,7 +249,10 @@ html[data-theme="light"] a:hover {
     right: 0;
 }
 
-/* Suppression des styles menu-header ajoutés */
+.project-image {
+    margin-top: 1rem;
+    text-align: center;
+}
 
 .side-menu h2 {
     font-size: 1.3rem;
