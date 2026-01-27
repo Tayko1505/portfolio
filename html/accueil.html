@@ -11,7 +11,7 @@
   <link href="../style.css" rel="stylesheet">
   <link rel="icon" type="image/png" href="../img/icon/portfolio.jpg" />
 </head>
-<body class="overflow-y-hidden">
+<body>
   <button class="menu-toggle" onclick="toggleMenu(event)">
     <i class="fa-solid fa-bars"></i>
   </button>
@@ -38,10 +38,78 @@
       <button type="button" id="themeLight" class="theme-btn theme-light" aria-pressed="false" title="Thème clair"></button>
     </div>
   </div>
-  <div class="container homepage-fullheight">
-    <h1 data-key="homepage_title">Lacroix Lenny</h1>
-    <p data-key="homepage_subtitle">Futur Data Engineer, étudiant en BUT Informatique parcours DATA, toujours prêt à relever de nouveaux défis.</p>
+
+  <div class="homepage-container">
+    <section class="hero-section">
+      <div class="avatar-container">
+        <img src="../img/icon/portfolio.jpg" alt="Avatar Lenny Lacroix" class="avatar">
+      </div>
+      <h1 data-key="homepage_title">Lacroix Lenny</h1>
+      <p class="hero-subtitle" data-key="homepage_subtitle">Futur Data Engineer, étudiant en BUT Informatique parcours DATA, toujours prêt à relever de nouveaux défis.</p>
+
+      <div class="main-nav">
+        <a href="competences.html" class="nav-card">
+          <i class="fa-solid fa-code"></i>
+          <h3 data-key="nav_skills">Compétences</h3>
+          <p data-key="homepage_nav_skills_desc">Découvrez mes techniques</p>
+        </a>
+        <a href="projets.html" class="nav-card">
+          <i class="fa-solid fa-folder-open"></i>
+          <h3 data-key="nav_projects">Projets</h3>
+          <p data-key="homepage_nav_projects_desc">Explorez mes réalisations</p>
+        </a>
+      </div>
+    </section>
+
+    <section class="timeline-section">
+      <h2 data-key="homepage_timeline_title">Mon parcours</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-date" data-key="homepage_timeline_bac_date">2022</div>
+            <h3 data-key="homepage_timeline_bac_title">Baccalauréat mention Très Bien</h3>
+            <p data-key="homepage_timeline_bac_desc">Spécialités : Mathématiques, Physique, Numériques et Sciences Informatique</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-date" data-key="homepage_timeline_but_date">2023 - 2026</div>
+            <h3 data-key="homepage_timeline_but_title">BUT Informatique parcours DATA</h3>
+            <p data-key="homepage_timeline_but_desc">Formation en développement et analyse de données</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-date" data-key="homepage_timeline_stage_date">Avril - Juin 2025</div>
+            <h3 data-key="homepage_timeline_stage_title">Stage chez Spacefoot</h3>
+            <p data-key="homepage_timeline_stage_desc">Première expérience professionnelle</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-date" data-key="homepage_timeline_alternance_date">Septembre 2025 - Août 2026</div>
+            <h3 data-key="homepage_timeline_alternance_title">Alternance chez Spacefoot</h3>
+            <p data-key="homepage_timeline_alternance_desc">Développement de compétences en environnement professionnel</p>
+          </div>
+        </div>
+
+        <div class="timeline-item timeline-item-final">
+          <div class="timeline-dot timeline-dot-final"></div>
+          <div class="timeline-content timeline-content-final">
+            <h3 data-key="homepage_timeline_future_title">Et plus à venir...</h3>
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
+
   <script src="../javascript/menu.js"></script>
 </body>
 </html>
