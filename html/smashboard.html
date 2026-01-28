@@ -41,38 +41,98 @@
 <div class="container project-page">
     <h1 data-key="smashboard_title">SmashBoard</h1>
     <p class="subtitle" data-key="smashboard_subtitle">Un outil interactif pour planifier et illustrer mes entraînements de badminton</p>
+
     <div class="project-card">
-        <div class="project-image">
-            <video src="../video/smashboard.webm" controls></video>
-        </div>
         <div class="project-content">
-            <p data-key="smashboard_p1">
-                Ce projet m’a permis de créer un outil visuel et interactif pensé pour le badminton.
-                L’objectif est de schématiser les situations de jeu, représenter les trajectoires de volants,
-                placer les joueurs et travailler sur des stratégies d’entraînement.
-            </p>
-            <p data-key="smashboard_p2">
-                Cet outil propose une liste simple d'outils, permettant de dessiner des lignes droites, des lignes en cloches, des flèches,
-                des traits libres, supprimer les traits à proximité, de placer des joueurs et de les déplacer.
-            </p>
-            <p data-key="smashboard_p3">
-                Il a également été pensé pour une utilisation fréquente sur mobile, comme l'illustre la capture d'écran ci-dessous.
-            </p>
-            <div class="project-image">
-                <img src="../img/smashboard_mobile.png" data-key="smashboard_img_mobile_alt" data-i18n-attr="alt" alt="SmashBoard sur mobile" />
+            <div class="project-section">
+                <h2 class="section-title">
+                    <i class="fa-solid fa-video"></i>
+                    <span data-key="smashboard_demo_title">Démonstration</span>
+                </h2>
+                <div class="project-image">
+                    <video src="../video/smashboard.webm" controls></video>
+                </div>
             </div>
-            <p>
-                <span data-key="smashboard_p4_before_link">Vous pouvez retrouver le code source de ce projet sur mon Github, en cliquant sur </span>
-                <a href="https://github.com/Tayko1505/smashboard" data-key="smashboard_link_text">ce lien</a>.
-            </p>
-            <p>
-                <span data-key="smashboard_p5_before_link">Ce projet a été déployé via CloudFlare / Wrangler, et est fréquemment utilisé par mon entraîneur.
-                Il est retrouvable en cliquant sur </span>
-                <a href="https://main.smashboard-6vk.pages.dev/" target="_blank" data-key="smashboard_link_text">ce lien</a>.
-            </p>
+
+            <div class="project-section">
+                <h2 class="section-title">
+                    <i class="fa-solid fa-lightbulb"></i>
+                    <span data-key="smashboard_concept_title">Concept</span>
+                </h2>
+                <p data-key="smashboard_p1">
+                    Ce projet m'a permis de créer un outil visuel et interactif pensé pour le badminton.
+                    L'objectif est de schématiser les situations de jeu, représenter les trajectoires de volants,
+                    placer les joueurs et travailler sur des stratégies d'entraînement.
+                </p>
+            </div>
+
+            <div class="project-section highlight-section">
+                <h2 class="section-title">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    <span data-key="smashboard_features_title">Fonctionnalités</span>
+                </h2>
+                <p data-key="smashboard_p2">
+                    Cet outil propose une liste simple d'outils, permettant de dessiner des lignes droites, des lignes en cloches, des flèches,
+                    des traits libres, supprimer les traits à proximité, de placer des joueurs et de les déplacer.
+                </p>
+                <div class="tech-badges">
+                    <span class="tech-badge"><i class="fa-solid fa-pen"></i> <span data-key="smashboard_feature_draw">Dessin libre</span></span>
+                    <span class="tech-badge"><i class="fa-solid fa-arrows-alt"></i> <span data-key="smashboard_feature_lines">Lignes & Flèches</span></span>
+                    <span class="tech-badge"><i class="fa-solid fa-user"></i> <span data-key="smashboard_feature_players">Placement joueurs</span></span>
+                    <span class="tech-badge"><i class="fa-solid fa-eraser"></i> <span data-key="smashboard_feature_erase">Effacement</span></span>
+                </div>
+            </div>
+
+            <div class="project-section">
+                <h2 class="section-title">
+                    <i class="fa-solid fa-mobile-screen-button"></i>
+                    <span data-key="smashboard_mobile_title">Version mobile</span>
+                </h2>
+                <p data-key="smashboard_p3">
+                    Il a également été pensé pour une utilisation fréquente sur mobile, comme l'illustre la capture d'écran ci-dessous.
+                </p>
+                <div class="project-image">
+                    <img src="../img/smashboard_mobile.png" data-key="smashboard_img_mobile_alt" data-i18n-attr="alt" alt="SmashBoard sur mobile" />
+                </div>
+            </div>
+
+            <div class="project-section">
+                <h2 class="section-title">
+                    <i class="fa-solid fa-code"></i>
+                    <span data-key="smashboard_tech_title">Technologies</span>
+                </h2>
+                <div class="tech-badges">
+                    <span class="tech-badge"><img src="../img/icon/javascript.png" alt="Svelte"> JavaScript</span>
+                    <span class="tech-badge"><i class="fa-brands fa-cloudflare"></i> CloudFlare</span>
+                </div>
+            </div>
+
+            <div class="project-section highlight-section">
+                <h2 class="section-title">
+                    <i class="fa-solid fa-star"></i>
+                    <span data-key="smashboard_usage_title">Utilisation active</span>
+                </h2>
+                <p data-key="smashboard_usage_text">
+                    Ce projet est déployé en production et est régulièrement utilisé par mes entraîneurs et moi-même
+                    pour préparer et illustrer nos séances d'entraînement de badminton. L'outil s'est avéré pratique
+                    et efficace pour la planification tactique.
+                </p>
+            </div>
+
+            <div class="project-links">
+                <a href="https://github.com/Tayko1505/smashboard" target="_blank" class="project-link-btn">
+                    <i class="fa-brands fa-github"></i>
+                    <span data-key="smashboard_view_github">Voir le code sur GitHub</span>
+                </a>
+                <a href="https://main.smashboard-6vk.pages.dev/" target="_blank" class="project-link-btn project-link-btn-secondary">
+                    <i class="fa-solid fa-external-link-alt"></i>
+                    <span data-key="smashboard_view_demo">Voir la démo en ligne</span>
+                </a>
+            </div>
         </div>
     </div>
 </div>
 <script src="../javascript/menu.js"></script>
 </body>
 </html>
+

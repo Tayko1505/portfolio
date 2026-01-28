@@ -41,78 +41,149 @@
 <div class="container project-page">
     <h1 data-key="dataviz_title">Dataviz - Music Charts</h1>
     <p class="subtitle" data-key="dataviz_subtitle">Projet scolaire de récolte et d'analyse de données.</p>
+
     <div class="project-card">
         <div class="project-content">
-            <p data-key="dataviz_p1">
-                Dans le cadre de ma formation, j'ai réalisé un projet d'analyse de données, avec un thème libre.
-                Nous avons choisi d'analyser des données musicales, en récoltant des informations sur les artistes, leurs titres, et leur nombre
-                d'écoutes quotidiennes et hebdomadaires, filtrables par pays. Nous avons pour cela utilisé <a href="https://kworb.net/">Kworb</a>, qui propose
-                de multiples tableaux selon différentes plateformes.
-            </p>
-            <div class="carousel" data-current-slide="0">
-                <button class="carousel-btn prev">&#10094;</button>
-                <div class="carousel-track">
-                    <img src="../img/dataviz/kworb1.png" alt="">
-                    <img src="../img/dataviz/kworb2.png" alt="">
-                    <img src="../img/dataviz/kworb3.png" alt="">
-                    <img src="../img/dataviz/kworb4.png" alt="">
-                    <img src="../img/dataviz/kworb5.png" alt="">
-                </div>
-                <button class="carousel-btn next">&#10095;</button>
+            <div class="project-section">
+                <h2 class="section-title">
+                    <i class="fa-solid fa-flag-checkered"></i>
+                    <span data-key="dataviz_context_title">Contexte du projet</span>
+                </h2>
+                <p data-key="dataviz_p1">
+                    Dans le cadre de ma formation, j'ai réalisé un projet d'analyse de données, avec un thème libre.
+                    Nous avons choisi d'analyser des données musicales, en récoltant des informations sur les artistes, leurs titres, et leur nombre
+                    d'écoutes quotidiennes et hebdomadaires, filtrables par pays. Nous avons pour cela utilisé <a href="https://kworb.net/">Kworb</a>, qui propose
+                    de multiples tableaux selon différentes plateformes.
+                </p>
             </div>
-            <p data-key="dataviz_p2">
-                Nous avons conçu nos algorithmes de récupération de données en Python avec <b>BeautifulSoup</b>, et nous avons stocké les données dans une
-                base <b>PostgreSQL</b>, que nous avons fait fonctionner avec des conteneurs <b>Docker</b>.
-                Pour les visuels, nous avons créé nos premiers tableaux de bord avec <b>Microsoft Power BI</b>, puis ajouté
-                de nouveaux dashboards avec <b>Metabase</b>.
-            </p>
-            <p data-key="dataviz_p3">
-                De plus, sur la période d'avril à juin 2025, une machine virtuelle exécutait les mêmes scripts
-                afin de récolter un maximum de données, ce qui a permis de monter le total à environ 10 000 artistes pour 500 000 musiques.
-                La machine virtuelle est maintenant éteinte, mais les scripts peuvent toujours être utilisés en local sur ce dépôt.
-            </p>
-            <p data-key="dataviz_powerbi_intro">
-                Voici les visuels sur <b>Power BI</b> :
-            </p>
-            <div class="carousel" data-current-slide="0">
-                <button class="carousel-btn prev">&#10094;</button>
-                <div class="carousel-track">
-                    <img src="../img/dataviz/powerbi1.png" alt="">
-                    <img src="../img/dataviz/powerbi2.png" alt="">
-                    <img src="../img/dataviz/powerbi3.png" alt="">
-                    <img src="../img/dataviz/powerbi4.png" alt="">
-                    <img src="../img/dataviz/powerbi5.png" alt="">
-                    <img src="../img/dataviz/powerbi6.png" alt="">
-                    <img src="../img/dataviz/powerbi7.png" alt="">
+
+            <div class="project-section">
+                <h2 class="section-title">
+                    <i class="fa-solid fa-database"></i>
+                    <span data-key="dataviz_source_title">Source de données : Kworb</span>
+                </h2>
+                <div class="carousel" data-current-slide="0">
+                    <button class="carousel-btn prev">&#10094;</button>
+                    <div class="carousel-track">
+                        <img src="../img/dataviz/kworb1.png" alt="">
+                        <img src="../img/dataviz/kworb2.png" alt="">
+                        <img src="../img/dataviz/kworb3.png" alt="">
+                        <img src="../img/dataviz/kworb4.png" alt="">
+                        <img src="../img/dataviz/kworb5.png" alt="">
+                    </div>
+                    <button class="carousel-btn next">&#10095;</button>
                 </div>
-                <button class="carousel-btn next">&#10095;</button>
             </div>
-            <p data-key="dataviz_p4">
-                Pour compléter nos tableaux de bord, nous avons ajouté une deuxième source de données, provenant du site
-                <a href="https://acousticbrainz.org/">AcousticBrainz</a>, qui permet d'obtenir des informations musicales sur
-                les morceaux : leur style ou leur genre, également triables par région. Nous avons aussi reproduit certains
-                dashboards réalisés sur Power BI.
-            </p>
-            <p data-key="dataviz_metabase_intro">
-                Voici les visuels sur <b>Metabase</b> :<br>
-            </p>
-            <div class="carousel" data-current-slide="0">
-                <button class="carousel-btn prev">&#10094;</button>
-                <div class="carousel-track">
-                    <img src="../img/dataviz/charts.png" alt="">
-                    <img src="../img/dataviz/diversity.png" alt="">
-                    <img src="../img/dataviz/genres.png" alt="">
-                    <img src="../img/dataviz/genres per region.png" alt="">
-                    <img src="../img/dataviz/song streams over time per country.png" alt="">
-                    <img src="../img/dataviz/streams per region.png" alt="" class="dataviz-streams-margin">
+
+            <div class="project-section">
+                <h2 class="section-title">
+                    <i class="fa-solid fa-code"></i>
+                    <span data-key="dataviz_tech_title">Technologies utilisées</span>
+                </h2>
+                <p data-key="dataviz_p2">
+                    Nous avons conçu nos algorithmes de récupération de données en Python avec <b>BeautifulSoup</b>, et nous avons stocké les données dans une
+                    base <b>PostgreSQL</b>, que nous avons fait fonctionner avec des conteneurs <b>Docker</b>.
+                    Pour les visuels, nous avons créé nos premiers tableaux de bord avec <b>Microsoft Power BI</b>, puis ajouté
+                    de nouveaux dashboards avec <b>Metabase</b>.
+                </p>
+                <div class="tech-badges">
+                    <span class="tech-badge"><img src="../img/icon/python.png" alt="Python"> Python</span>
+                    <span class="tech-badge"><img src="../img/icon/postegres.png" alt="PostgreSQL"> PostgreSQL</span>
+                    <span class="tech-badge"><img src="../img/icon/docker.png" alt="Docker"> Docker</span>
+                    <span class="tech-badge"><img src="../img/icon/powerbi.png" alt="Power BI"> Power BI</span>
+                    <span class="tech-badge"><i class="fa-solid fa-chart-line"></i> Metabase</span>
                 </div>
-                <small data-key="lightbox_hint" class="lightbox-hint-margin">Cliquez sur l'image pour l'afficher en plein écran.</small>
-                <button class="carousel-btn next">&#10095;</button>
             </div>
-            <p>
-                <span data-key="dataviz_repo_text">Vous pouvez retrouver le dépôt Github sur ce </span>
-                <a href="https://github.com/Tayko1505/music-charts/" target="_blank" data-key="dataviz_repo_link_text">lien</a>
-            </p>
+
+            <div class="project-section highlight-section">
+                <h2 class="section-title">
+                    <i class="fa-solid fa-server"></i>
+                    <span data-key="dataviz_collection_title">Collecte de données massive</span>
+                </h2>
+                <p data-key="dataviz_p3">
+                    De plus, sur la période d'avril à juin 2025, une machine virtuelle exécutait les mêmes scripts
+                    afin de récolter un maximum de données, ce qui a permis de monter le total à environ 10 000 artistes pour 500 000 musiques.
+                    La machine virtuelle est maintenant éteinte, mais les scripts peuvent toujours être utilisés en local sur ce dépôt.
+                </p>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <i class="fa-solid fa-users"></i>
+                        <span class="stat-number">~ 10 000</span>
+                        <span class="stat-label" data-key="dataviz_stat_artists">Artistes</span>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fa-solid fa-music"></i>
+                        <span class="stat-number">~ 500 000</span>
+                        <span class="stat-label" data-key="dataviz_stat_songs">Musiques</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-section">
+                <h2 class="section-title">
+                    <i class="fa-solid fa-chart-bar"></i>
+                    <span data-key="dataviz_powerbi_title">Visualisations Power BI</span>
+                </h2>
+                <p data-key="dataviz_powerbi_intro">
+                    Voici les visuels sur <b>Power BI</b> :
+                </p>
+                <div class="carousel" data-current-slide="0">
+                    <button class="carousel-btn prev">&#10094;</button>
+                    <div class="carousel-track">
+                        <img src="../img/dataviz/powerbi1.png" alt="">
+                        <img src="../img/dataviz/powerbi2.png" alt="">
+                        <img src="../img/dataviz/powerbi3.png" alt="">
+                        <img src="../img/dataviz/powerbi4.png" alt="">
+                        <img src="../img/dataviz/powerbi5.png" alt="">
+                        <img src="../img/dataviz/powerbi6.png" alt="">
+                        <img src="../img/dataviz/powerbi7.png" alt="">
+                    </div>
+                    <button class="carousel-btn next">&#10095;</button>
+                </div>
+            </div>
+
+            <div class="project-section">
+                <h2 class="section-title">
+                    <i class="fa-solid fa-brain"></i>
+                    <span data-key="dataviz_acousticbrainz_title">Analyse avec AcousticBrainz</span>
+                </h2>
+                <p data-key="dataviz_p4">
+                    Pour compléter nos tableaux de bord, nous avons ajouté une deuxième source de données, provenant du site
+                    <a href="https://acousticbrainz.org/">AcousticBrainz</a>, qui permet d'obtenir des informations musicales sur
+                    les morceaux : leur style ou leur genre, également triables par région. Nous avons aussi reproduit certains
+                    dashboards réalisés sur Power BI.
+                </p>
+            </div>
+
+            <div class="project-section">
+                <h2 class="section-title">
+                    <i class="fa-solid fa-chart-pie"></i>
+                    <span data-key="dataviz_metabase_title">Visualisations Metabase</span>
+                </h2>
+                <p data-key="dataviz_metabase_intro">
+                    Voici les visuels sur <b>Metabase</b> :
+                </p>
+                <div class="carousel" data-current-slide="0">
+                    <button class="carousel-btn prev">&#10094;</button>
+                    <div class="carousel-track">
+                        <img src="../img/dataviz/charts.png" alt="">
+                        <img src="../img/dataviz/diversity.png" alt="">
+                        <img src="../img/dataviz/genres.png" alt="">
+                        <img src="../img/dataviz/genres per region.png" alt="">
+                        <img src="../img/dataviz/song streams over time per country.png" alt="">
+                        <img src="../img/dataviz/streams per region.png" alt="" class="dataviz-streams-margin">
+                    </div>
+                    <small data-key="lightbox_hint" class="lightbox-hint-margin">Cliquez sur l'image pour l'afficher en plein écran.</small>
+                    <button class="carousel-btn next">&#10095;</button>
+                </div>
+            </div>
+
+            <div class="project-links">
+                <a href="https://github.com/Tayko1505/music-charts/" target="_blank" class="project-link-btn">
+                    <i class="fa-brands fa-github"></i>
+                    <span data-key="dataviz_view_github">Voir le code sur GitHub</span>
+                </a>
+            </div>
         </div>
     </div>
 </div>
@@ -124,3 +195,4 @@
 <script src="../javascript/carousel.js"></script>
 </body>
 </html>
+
