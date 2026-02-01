@@ -9,7 +9,6 @@
     --card-border-gradient: linear-gradient(90deg, var(--accent), #a855f7);
     --panel-bg: #1a1a1d;
     --card-bg: rgba(47, 43, 43, 0.13);
-    --shadow: 0 8px 30px rgba(0,0,0,0.35);
     --media-bg: #111;
     --selected-border: var(--accent);
 }
@@ -20,7 +19,6 @@ html[data-theme="light"] {
     --accent: #0284c7;
     --panel-bg: #ffffff;
     --card-bg: rgba(0, 0, 0, 0.04);
-    --shadow: 0 8px 30px rgba(0,0,0,0.12);
     --media-bg: #f0f2f6;
     --selected-border: var(--accent);
 }
@@ -130,11 +128,16 @@ html[data-theme="light"] a:hover {
     color: var(--accent);
 }
 
+html[data-theme="light"] .side-menu a {
+    text-decoration: none;
+    color: var(--text);
+}
+
 .menu-toggle {
     position: fixed;
     top: 1.5rem;
     right: 1.5rem;
-    background: none;
+    background: var(--panel-bg);
     border: 2px solid var(--accent);
     color: var(--accent);
     padding: 0.5rem 1rem;
@@ -143,11 +146,28 @@ html[data-theme="light"] a:hover {
     cursor: pointer;
     transition: background 0.3s, color 0.3s;
     z-index: 999;
+    background: var(--bg);
 }
 
 .menu-toggle:hover {
     background: var(--accent);
     color: var(--bg);
+}
+
+html[data-theme="light"] .menu-toggle {
+    background: white;
+    color: var(--accent); /* ou var(--text) si tu préfères */
+}
+
+html[data-theme="light"] .menu-toggle,
+html[data-theme="light"] .menu-toggle:focus,
+html[data-theme="light"] .menu-toggle:active {
+    background: white;
+    color: var(--accent) !important;
+}
+
+html[data-theme="light"] .menu-toggle i {
+    color: var(--accent) !important;
 }
 
 .side-menu {
@@ -163,7 +183,6 @@ html[data-theme="light"] a:hover {
     flex-direction: column;
     gap: 1rem;
     transition: right 0.4s ease-in-out;
-    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.5);
     z-index: 998;
 }
 
@@ -279,7 +298,6 @@ html[data-theme="light"] a:hover {
     z-index: 1;
     background: var(--card-bg);
     border-radius: var(--card-radius);
-    box-shadow: var(--shadow);
     margin: 1rem auto 30px;
     overflow: hidden;
     padding: 1.5rem 2rem 15px;
@@ -379,7 +397,6 @@ html[data-theme="light"] a:hover {
 .tech-badge:hover {
     transform: translateY(-2px);
     border-color: var(--accent);
-    box-shadow: 0 4px 12px rgba(56, 189, 248, 0.2);
 }
 
 .tech-badge img {
@@ -439,7 +456,6 @@ html[data-theme="light"] a:hover {
 
 .e-card {
     animation: fadeIn 1.2s ease forwards;
-    box-shadow: 0px 8px 28px -9px rgba(0,0,0,0.45);
     position: relative;
     z-index: 0;
     overflow: hidden;
@@ -585,20 +601,17 @@ html[data-theme="light"] a:hover {
     z-index: 1;
     background: var(--card-bg);
     border-radius: var(--card-radius);
-    box-shadow: var(--shadow);
     overflow: hidden;
     padding: 2em 1.5em;
     min-height: 15em;
     height: 100%;
     display: flex;
     flex-direction: column;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
 }
 
 .project-preview-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 12px 40px rgba(56, 189, 248, 0.25);
 }
 
 .project-preview-card::before {
@@ -679,7 +692,6 @@ html[data-theme="light"] a:hover {
     margin: 30px auto;
     overflow: hidden;
     border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     background: var(--media-bg);
 }
 
@@ -766,7 +778,6 @@ video {
     max-width: 90%;
     max-height: 90%;
     border-radius: 10px;
-    box-shadow: 0 0 20px rgba(255,255,255,0.3);
 }
 
 .lightbox-close {
@@ -799,12 +810,10 @@ video {
     font-weight: 600;
     font-size: 1.05rem;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(56, 189, 248, 0.3);
 }
 
 .project-link-btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(56, 189, 248, 0.4);
     color: white;
 }
 
@@ -821,7 +830,6 @@ video {
 .project-link-btn-secondary:hover {
     background: var(--accent);
     color: white;
-    box-shadow: 0 6px 20px rgba(56, 189, 248, 0.4);
 }
 
 html[data-theme="light"] .project-link-btn-secondary {
@@ -830,6 +838,15 @@ html[data-theme="light"] .project-link-btn-secondary {
 
 html[data-theme="light"] .project-link-btn-secondary:hover {
     color: white;
+}
+
+html[data-theme="light"] .project-link-btn {
+    text-decoration: none;
+}
+
+html[data-theme="light"] .menu-toggle {
+    background: white;
+    color: var(--accent); /* ou var(--text) si tu préfères */
 }
 
 @keyframes fadeIn {
@@ -870,12 +887,11 @@ html[data-theme="light"] .project-link-btn-secondary:hover {
 
 .avatar-container {
     margin: 0 auto 2rem;
-    width: 150px;
-    height: 150px;
+    width: 250px;
+    height: 250px;
     border-radius: 50%;
     overflow: hidden;
     border: 4px solid var(--accent);
-    box-shadow: 0 8px 25px rgba(56, 189, 248, 0.3);
     animation: fadeIn 1.2s ease forwards;
 }
 
@@ -911,7 +927,6 @@ html[data-theme="light"] .project-link-btn-secondary:hover {
     text-decoration: none;
     color: var(--text);
     transition: all 0.3s ease;
-    box-shadow: var(--shadow);
     position: relative;
     overflow: hidden;
 }
@@ -936,7 +951,6 @@ html[data-theme="light"] .project-link-btn-secondary:hover {
 
 .nav-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 12px 40px rgba(56, 189, 248, 0.25);
 }
 
 .nav-card i {
@@ -1018,7 +1032,6 @@ html[data-theme="light"] .project-link-btn-secondary:hover {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    box-shadow: 0 0 0 4px var(--bg), 0 0 0 6px var(--accent);
     z-index: 2;
 }
 
@@ -1027,7 +1040,6 @@ html[data-theme="light"] .project-link-btn-secondary:hover {
     background: var(--card-bg);
     padding: 1.5rem;
     border-radius: var(--card-radius);
-    box-shadow: var(--shadow);
     border: 2px solid transparent;
     position: relative;
     transition: all 0.3s ease;
@@ -1087,7 +1099,6 @@ html[data-theme="light"] .project-link-btn-secondary:hover {
 
 .timeline-dot-final {
     background: linear-gradient(135deg, var(--accent), #a855f7);
-    box-shadow: 0 0 0 4px var(--bg), 0 0 0 6px var(--accent), 0 0 20px rgba(56, 189, 248, 0.4);
 }
 
 .timeline-content-final {
