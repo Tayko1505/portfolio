@@ -146,7 +146,6 @@ html[data-theme="light"] .side-menu a {
     cursor: pointer;
     transition: background 0.3s, color 0.3s;
     z-index: 999;
-    background: var(--bg);
 }
 
 .menu-toggle:hover {
@@ -846,7 +845,7 @@ html[data-theme="light"] .project-link-btn {
 
 html[data-theme="light"] .menu-toggle {
     background: white;
-    color: var(--accent); /* ou var(--text) si tu préfères */
+    color: var(--accent);
 }
 
 @keyframes fadeIn {
